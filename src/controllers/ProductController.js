@@ -8,9 +8,9 @@ const ProductController = {
     produtosByID(req, res){
         const { id } = req.params
     
-        const pessoa = products.find(pessoa => String(pessoa.id)  === id)
-        if (pessoa)
-            return res.json(pessoa)
+        const product = products.find(product => String(product.id)  === id)
+        if (product)
+            return res.json(product)
     
         else return res.status(400).json({ error: 'Produto não encontrado'})
            
@@ -19,17 +19,17 @@ const ProductController = {
     create(req, res){
     
         products.push(req.body)
-        res.send(pessoas)
+        res.send(products)
     },
 
     update(req, res){
         const { id } = req.params
     
-        const pessoaIndex = products.findIndex(pessoa => String(pessoa.id)  === id)
+        const productIndex = products.findIndex(product => String(product.id)  === id)
     
-        if (pessoaIndex != -1){
-            products[pessoaIndex] = req.body
-            return res.json(pessoas)
+        if (productIndex != -1){
+            products[productIndex] = req.body
+            return res.json(products)
         }
             
         else return res.status(400).json({ error: 'Produto não encontrado'})
@@ -39,11 +39,11 @@ const ProductController = {
     delete(req, res){
         const { id } = req.params
     
-        const pessoaIndex = products.findIndex(pessoa => String(pessoa.id)  === id)
+        const productIndex = products.findIndex(product => String(product.id)  === id)
     
     
-        if (pessoaIndex != -1){
-            pessoas.splice(pessoaIndex, 1)
+        if (productIndex != -1){
+            products.splice(productIndex, 1)
             return res.json(products)
         }
         else return res.status(400).json({ error: 'Produto não encontrado'})
