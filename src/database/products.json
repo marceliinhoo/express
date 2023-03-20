@@ -1,22 +1,52 @@
 [
 	{
 		"id": "1",
-		"name": "Tênis Adidas",
-		"price": 600
+		"name": "VIKINGS - Young's Stout",
+		"price": 69.99
 	},
 	{
 		"id": "2",
-		"name": "Tênis Nike",
-		"price": 700
+		"name": "Beer Double Chocolate",
+		"price": 79.99
 	},
 	{
 		"id": "3",
-		"name": "Tênis Olympikus",
-		"price": 200
+		"name": "Marwhal - Black Beer",
+		"price": 55.00
 	},
 	{
 		"id": "4",
-		"name": "Tênis Penalty",
-		"price": 400
+		"name": "Ouropretana - English Pale Ale",
+		"price": 89.00
+	},
+	{
+		"id": "5",
+		"name": "Ouropretana - Golden Lager",
+		"price": 99.99
+	},
+	{
+		"id": "5",
+		"name": "Ouropretana - Golden Lager",
+		"price": 99.99
+	},
+	{
+		"id": "6",
+		"name": "Negra Modelo - Honey bee",
+		"price": 65.00
+	},
+	{
+		"id": "7",
+		"name": "Impeesa - Porter",
+		"price": 65.00
+	},
+	{
+		"id": "8",
+		"name": "Cornet- Pale Ale",
+		"price": 35.00
+	},
+	{
+		"id": "9",
+		"name": "VOLCELEST - Golden Pale",
+		"price": 75.00
 	}
 ]
