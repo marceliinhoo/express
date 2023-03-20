@@ -4,6 +4,8 @@ app.use(express.json())
 
 const  routes = require('./routes/index')
 
+app.set("view engine","ejs")
+
 
 app.use(routes)
 
