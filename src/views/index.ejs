@@ -1,0 +1,61 @@
+<html lang="pt-br">
+  <head>
+      <meta name="viewport"content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <title>VIKINGS BEER</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="../Tela Home/index.html">V  I  K  I  N  G  S <br> BEERHOUSE </a></li>
+          <li><a href="../sobrenós/sobrenos.html">SOBRE</a></li>
+          <li><a href="../Tela de Vitrine/index.html">PRODUTOS</a></li>
+          <li><a href="../Tela de Perfil/">MINHA CONTA</a></li>
+          <li><a href="#"><img src="imagens\t.png" alt="VIKINGS BEERHOUSE" width="100px" ></a></li>
+          <li><a href="#"><form><input type="search" placeholder="Pesquisar"></form></a></li>
+        <div class="barra-vertical"></div>
+        <li><a href="../Tela Login/index.html"><div class="minha-conta"><img src="imagens\minhaConta.png" alt="Minha Conta"  width="20" ><p>Faça <br>Seu <br>Login</p></div></a>
+        </li>
+        <li><a href="../Tela de Carrinho/index.html"><div class="meus-pedidos"><img src="imagens\carrinho.png" alt="Meus Pedidos"  width="20" ><p>Meus <br> Pedidos</p></div></a>
+        </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+
+        <% products.forEach((products)=> { let finalPrice =(products.price) %>
+
+        
+      <h1><img src="imagens\h.png" alt="VIKINGS BEERHOUSE" width="100%" ></h1>
+      <h2>V I K I N G S <br> BEERHOUSE</h2>
+      <span>
+        <%= finalPrice %>
+      </span>
+      <div class="destaque"> DESTAQUES </div>
+      <br>
+      <br>
+
+      <% })%>
+      <nav>
+      <ul>
+        <li><a href="#"><img src="imagens\4.jpg" alt="VIKINGS BEERHOUSE" width="500px" height="700px"> <p> R$39,99 </p></a></li>
+        <li><a href="#"><img src="imagens\c.png" alt="VIKINGS BEERHOUSE" width="500px" height="700px"><p> R$20,00 </p></a></li>
+        <li><a href="#"><img src="imagens\i.jpg" alt="VIKINGS BEERHOUSE" width="500px" height="700px"><p> R$25,99 </p></a></li>
+      </ul>
+    </nav>
+    </main>
+    <footer>
+      <p>Copyright © Meu e-commerce</p>
+      <ul>
+        <li><a href="#">Sobre a Vikings Beerhouse</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a href="#">Blog do Cervejeiro</a></li>
+        <li><a href="#">Termos de Uso</a></li>
+        <li><a href="#">Política de Privacidade</a></li>
+      </ul>
+      </ul>
+    </footer>
+
+  </body>
+</html>
