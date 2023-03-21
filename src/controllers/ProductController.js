@@ -54,3 +54,5 @@ const ProductController = {
 }
 
 module.exports = ProductController
+
+Teste
