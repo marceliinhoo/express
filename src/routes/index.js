@@ -1,22 +1,30 @@
 const express = require('express')
 const router = express.Router()
 
-const ProductController = require('../controllers/ProductController')
+const main = require ('../controllers/MainControler')
+
+const productController = require('../controllers/ProductController')
+
+// # Main
+//GET ALL
+app.get('/', mainController.index )
+
 
 //produtos
 
-app.get('/pessoa', ProductController.todosProdutos )
+//# GET ALL
+app.get('/pessoa', productController.todosProdutos )
 
-//# 1
-app.get('/pessoa/:id', ProductController.produtosByID)
+//# GET by ID
+app.get('/pessoa/:id', productController.produtosByID)
+//# POST
+app.post('/pessoa',productController.create )
 
-app.post('/pessoa',ProductController.create )
+//# PUT
+app.put('/pessoa/:id',productController.update )
 
-//# 2
-app.put('/pessoa/:id',ProductController.update )
-
-//# 3
-app.delete('/pessoa/:id',ProductController.delete )
+//# DELETE
+app.delete('/pessoa/:id',productController.delete )
 
 
 
