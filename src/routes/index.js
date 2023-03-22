@@ -7,7 +7,7 @@ const productController = require('../controllers/ProductController')
 
 // # Main
 //GET ALL
-app.get('/', mainController.index )
+app.get('/', mainControler.index )
 
 
 //produtos
