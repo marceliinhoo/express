@@ -14,7 +14,7 @@ router.get('/sobrenos', mainController.sobre)
 
 // # Product
 // GET - EJS Detail - View
-router.get('/product/detail/:id', productController.detailEJS)
+router.get('/product/detalhes/:id', productController.detailEJS)
 // GET - EJS Create Form - View
 router.get('/product/create', productController.createFormEJS)
 // GET - EJS Update Form - View
