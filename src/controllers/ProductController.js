@@ -49,7 +49,7 @@ const ProductController = {
 	detailEJS: (req, res) => {
 		let id = req.params.id
 		let product = products.find(product => product.id == id)
-		res.render('detalhes', {
+		res.render('detail', {
 			product,
 			toThousand
 		})
