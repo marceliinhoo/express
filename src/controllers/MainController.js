@@ -20,6 +20,18 @@ const MainController = {
   },
   sobre: (req, res) => {
     res.render('sobrenos', { })
+  },
+  cadastro: (req, res) => {
+    res.render('cadastro', { })
+  },
+  perfil: (req, res) => {
+    res.render('perfil', { })
+  },
+  login: (req, res) => {
+    res.render('login', { })
+  },
+  carrinho: (req, res) => {
+    res.render('carrinho', { })
   }
 }
 module.exports = MainController
