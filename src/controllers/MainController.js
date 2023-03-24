@@ -21,11 +21,7 @@ const MainController = {
   sobre: (req, res) => {
     res.render('sobrenos', { })
   },
-<<<<<<< HEAD
- login: (req, res) => {
-    res.render('login', { })
-=======
-  cadastro: (req, res) => {
+   cadastro: (req, res) => {
     res.render('cadastro', { })
   },
   perfil: (req, res) => {
@@ -36,7 +32,6 @@ const MainController = {
   },
   carrinho: (req, res) => {
     res.render('carrinho', { })
->>>>>>> cb55cbaa20cbce2dc8a1049f16c4166f99c3b5f9
   }
 }
 module.exports = MainController

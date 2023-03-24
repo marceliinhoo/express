@@ -11,7 +11,6 @@ router.get('/', mainController.index)
 router.get('/search', mainController.search)
 
 router.get('/sobrenos', mainController.sobre)
-
 router.get('/cadastro', mainController.cadastro)
 router.get('/perfil', mainController.perfil)
 router.get('/login', mainController.login)
