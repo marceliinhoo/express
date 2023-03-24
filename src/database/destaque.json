@@ -1,0 +1,26 @@
+[
+	{
+		"id": "1",
+		"name": "VIKINGS - Young's Stout",
+		"description":"",
+		"characteristics":"",
+		"price": 69.99,
+		"image": "Young-stout.png"
+	},
+  {
+		"id": "2",
+		"name": "VOLCELEST - Golden Pale",
+		"description":"",
+		"characteristics":"",
+		"price": 75.00,
+		"image": "PALE -.PNG"
+	},
+	{
+		"id": "3",
+		"name": "Marwhal - Black Beer",
+		"description":"",
+		"characteristics":"",
+		"price": 55.00,
+		"image": "Marwhal - Black Beer.PNG"
+	}
+]

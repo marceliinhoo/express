@@ -32,7 +32,12 @@ li a{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+}
+
+#pesquisa input{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
 }
 
 
