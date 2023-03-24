@@ -3,10 +3,10 @@
 <!-- Include Head -->
 <%- include('includes/head', {title: 'Detalhe do Produto' }) %>
 
-  <body>
-    <!-- Header -->
-    <%- include('includes/header') %>
-    <!-- /Header -->
+<%- include('includes/head', { title: 'Início' }) %>
+
+<body>
+  <%- include('includes/header') %>
   <main>
 
     <div id="box">
@@ -105,18 +105,7 @@
 
     </div>
 
-    <footer>
-      <p>Copyright © Meu e-commerce</p>
-      <ul>
-        <li><a href="#">Sobre a Vikings Beerhouse</a></li>
-        <li><a href="#">Contato</a></li>
-        <li><a href="#">Blog do Cervejeiro</a></li>
-        <li><a href="#">Termos de Uso</a></li>
-        <li><a href="#">Política de Privacidade</a></li>
-      </ul>
-      </ul>
-    </footer>
-
+    <%- include('includes/footer') %>
     
 </body>
 <script src="./fontawesome/js/all.min.js"></script>
