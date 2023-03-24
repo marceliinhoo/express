@@ -24,6 +24,8 @@ router.put('/product/:id', productController.updateEJS)
 // DELETE - EJS Delete
 router.delete('/product/:id', productController.deleteEJS)
 
+
+
 // // # Product
 // // GET ALL
 // router.get('/product', productController.showAll)
