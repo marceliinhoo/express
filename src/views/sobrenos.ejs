@@ -1,42 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Vikings Beerhouse</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="./sobrenos.css">
-  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-  
-</head>
+<%- include('includes/head', { title: 'Início' }) %>
 
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="../Tela Home/index.html">V I K I N G S <br> BEERHOUSE </a></li>
-        <li><a href="../sobrenós/sobrenos.html">SOBRE</a></li>
-        <li><a href="../Tela de Vitrine/index.html">PRODUTOS</a></li>
-        <li><a href="../Tela de Perfil/index.html">MINHA CONTA</a></li>
-        <li><a href="#"><img src="imagens\t.png" alt="VIKINGS BEERHOUSE" width="100px"></a></li>
-        <li><a href="#">
-            <form><input type="search" placeholder="Pesquisar"></form>
-          </a></li>
-        <div class="barra-vertical"></div>
-        <li><a href="../Tela Login/index.html">
-            <div class="minha-conta"><img src="imagens\minhaConta.png" alt="Minha Conta" width="20">
-              <p>Faça <br>Seu <br>Login</p></div></a>
-            </div>
-          </a>
-        </li>
-        <li><a href="../Tela de Carrinho/index.html">
-            <div class="meus-pedidos"><img src="imagens\carrinho.png" alt="Meus Pedidos" width="20">
-              <p>Meus <br> Pedidos</p>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <%- include('includes/header') %>
   <main>
 
     <div id="box">
@@ -135,18 +103,7 @@
 
     </div>
 
-    <footer>
-      <p>Copyright © Meu e-commerce</p>
-      <ul>
-        <li><a href="#">Sobre a Vikings Beerhouse</a></li>
-        <li><a href="#">Contato</a></li>
-        <li><a href="#">Blog do Cervejeiro</a></li>
-        <li><a href="#">Termos de Uso</a></li>
-        <li><a href="#">Política de Privacidade</a></li>
-      </ul>
-      </ul>
-    </footer>
-
+    <%- include('includes/footer') %>
     
 </body>
 <script src="./fontawesome/js/all.min.js"></script>

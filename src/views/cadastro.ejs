@@ -1,40 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Cadastro</title>
-  </head>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="../Tela Home/index.html">V I K I N G S <br> BEERHOUSE </a></li>
-        <li><a href="../sobrenós/sobrenos.html">SOBRE</a></li>
-        <li><a href="../Tela de Vitrine/index.html">PRODUTOS</a></li>
-        <li><a href="../Tela de Perfil/">MINHA CONTA</a></li>
-        <li><a href="#"><img src="../Tela Home/imagens/t.png" alt="VIKINGS BEERHOUSE" width="100px"></a></li>
-        <li><a href="../Tela de Vitrine/index.html">
-            <input type="search" placeholder="Pesquisar">
-          </a></li>
-        <div class="barra-vertical"></div>
-        <li><a href="../Tela Login/index.html">
-            <div class="minha-conta"><img src="../Tela Home/imagens/minhaConta.png" alt="Minha Conta" width="20">
-              <p>Faça <br>Seu <br>Login</p></div></a>
-            </div>
-          </a>
-        </li>
-        <li><a href="../Tela de Carrinho/index.html">
-            <div class="meus-pedidos"><img src="../Tela Home/imagens/carrinho.png" alt="Meus Pedidos" width="20">
-              <p>Meus <br> Pedidos</p>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <%- include('includes/head', { title: 'Início' }) %>
+
   <body>
+
+    <%- include('includes/header') %>
     <div class="card">
       <aside class="column">
           <img  class="image"src="../images/Logo sem fundo 600x600 sem opacidade.png" alt="logotipo">
@@ -111,5 +81,7 @@
       </form>
     </div>
     <script src="index.js"></script>
+
+    <%- include('includes/footer') %>
   </body>
 </html>
