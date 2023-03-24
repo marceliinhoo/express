@@ -12,9 +12,11 @@ router.get('/search', mainController.search)
 
 router.get('/sobrenos', mainController.sobre)
 
+router.get('/login', mainController.login)
+
 // # Product
 // GET - EJS Detail - View
-router.get('/product/detalhes/:id', productController.detailEJS)
+router.get('/product/detail/:id', productController.detailEJS)
 // GET - EJS Create Form - View
 router.get('/product/create', productController.createFormEJS)
 // GET - EJS Update Form - View
