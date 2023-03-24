@@ -12,15 +12,10 @@ router.get('/search', mainController.search)
 
 router.get('/sobrenos', mainController.sobre)
 
-<<<<<<< HEAD
-router.get('/login', mainController.login)
-=======
 router.get('/cadastro', mainController.cadastro)
 router.get('/perfil', mainController.perfil)
 router.get('/login', mainController.login)
 router.get('/carrinho', mainController.carrinho)
->>>>>>> cb55cbaa20cbce2dc8a1049f16c4166f99c3b5f9
-
 // # Product
 // GET - EJS Detail - View
 router.get('/product/detail/:id', productController.detailEJS)
