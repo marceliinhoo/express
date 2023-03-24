@@ -17,6 +17,9 @@ const MainController = {
       search,
       toThousand,
     })
+  },
+  sobre: (req, res) => {
+    res.render('sobrenos', { })
   }
 }
 module.exports = MainController
