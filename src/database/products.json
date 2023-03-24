@@ -4,14 +4,14 @@
 		"name": "VIKINGS - Young's Stout",
 		"description":"",
 		"price": 69.99,
-		"image": "Young-stout.PNG"
+		"image": "Young-stout.png"
 	},
-	{
+  {
 		"id": "2",
-		"name": "Beer Double Chocolate",
+		"name": "VOLCELEST - Golden Pale",
 		"description":"",
-		"price": 79.99,
-		"image": "young stout (1)"
+		"price": 75.00,
+		"image": "PALE -.PNG"
 	},
 	{
 		"id": "3",
@@ -54,13 +54,5 @@
 		"description":"",
 		"price": 35.00,
 		"image": "Cornet -.PNG"
-	},
-	{
-		"id": "9",
-		"name": "VOLCELEST - Golden Pale",
-		"description":"",
-		"price": 75.00,
-		"image": "PALE -.PNG"
-
 	}
 ]
