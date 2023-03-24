@@ -10,6 +10,8 @@ router.get('/', mainController.index)
 // GET ALL
 router.get('/search', mainController.search)
 
+router.get('/sobrenos', mainController.sobre)
+
 // # Product
 // GET - EJS Detail - View
 router.get('/product/detail/:id', productController.detailEJS)
