@@ -9,72 +9,42 @@
     <!-- /Header -->
 
       <!-- product detail -->
-      <div class="container products-wrapper">
-        <div class="row">
-          <div class="col-12">
+        <div class="container mt-3">
+        <div class="row d-flex justify-content-center">
+        </div>
+        <div class="grup">
+          <img src="/images/<%= product.image %>" alt="product image" class="product-detail-img">
+          <div class="barra-produto"></div>
+          <div class="txt-grup">
+            <img src="/images/<%= product.image %>" alt="product image" class="product-img">
             <h2 class="products-title"><%= product.name %></h2>
-          </div>
-        </div>
-        <div class="product-detail">
-          <div class="row">
-            <div class="col-12 col-lg-8">
-              <img src="/images/<%= product.image %>" alt="product image" class="product-detail-img">
-              <p class="product-detail-description">
-                <%= product.description %>
-              </p>
+            <div class="preco">
+            <h1>R$69,99</h1>
             </div>
-            <div class="col-12 col-lg-4">
-              <article class="product-detail-info">
-                <h2 class="product-detail-title">
-                  <%= product.name %>
-                </h2>
-                <% if(product.discount> 0) {
-                  let finalPrice = (product.price * ((100 - product.discount) / 100)).toFixed(0)
-                %>
-                  <p class="product-detail-price small">
-                    <span>R$<%= toThousand(product.price) %></span>
-                    /
-                    <b>
-                      <%= product.discount %>% OFF
-                    </b>
-                  </p>
-                  <p class="product-detail-price">
-                    R$<%= toThousand(finalPrice) %>
-                  </p>
-                <% } else { %>
-                    <p class="product-detail-price">
-                      R$<%= toThousand(product.price) %>
-                    </p>
-                <% } %>
-
-                <ul class="actions-list">
-                  <li>
-                    <i class="fas fa-credit-card"></i>
-                    <p>Pague em 12 vezes sem juros</p>
-                  </li>
-                  <li>
-                    <i class="fas fa-store"></i>
-                    <p>Retirada gratuita nos locais de venda</p>
-                  </li>
-                </ul>
-
-                <a href="#" class="buy-now-button">COMPRAR AGORA</a>
-                <hr>
-
-                <a href="/product/update/<%= product.id %>" class="action-button edit">Editar Produto</a>
-                <form action="/product/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                  <button type="submit" class="action-button delete">Remover Produto</button>
-                </form>
-              </article>
+            <div id="quantrow" class="row">
+              <div class="col-md-5">
+                <p>Quantidade:</p>
+              </div>
+              <div class="col-md-1">
+                <p></p>
+              </div>
+              <div class="col-md-5" id="quantidade">
+                <input type="button" id="minus" value="-" (click)="process(-1)" (click)="parcial()" />
+                <input [(ngModel)]="quant" id="quant" name="quant" class="text" size="1" value="1" type="text"
+                  maxlength="2" />
+                <input type="button" id="plus" value="+" (click)="process(1)" (click)="parcial()">
+              </div>
+            </div>
+            <button type="button" class="btn bb" (click)="addCarrinho()"><p>Adicionar ao carrinho</p></button>
+            <div id="descricao">
+              <h3 class="description-product">Informações sobre o produto:<br><%= product.description %> </h3>
+            <br>
+            <h4 class="caract-product">Características:<br><%= product.characteristics %> </h4>
+            <br>
+             </div>
+            </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- /product detail -->
-
-      <!-- footer -->
-      <%- include('includes/footer') %>
-      <!-- /footer -->
-  </body>
-
-</html>
+      </main>
+      </body>
