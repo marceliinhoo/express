@@ -26,8 +26,15 @@
     font-weight: 850;
     color: #ffff;
     text-align: center;
-    top: 150px;
-    left: 1000px;
+    top: 5px;
+    left: 100px;
+}
+
+h3{
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 1em;
+    font-weight: 150;
 }
 
 a:hover{
@@ -41,7 +48,7 @@ a:hover{
     margin: 0 45px;
 }
 .barra-produto {
-    width: 8px;
+    width: 25px;
     height: 577px;
     background-color: rgb(255, 255, 255);
     margin: 50px;
@@ -51,6 +58,8 @@ a:hover{
     flex-direction: column; 
     align-items: center;
     justify-content: center;
+    top: 100px;
+    margin-bottom: 180px;
 }
 .produto img{
     margin: 50px;
@@ -65,12 +74,14 @@ h2{
     letter-spacing: 1.5px;
     color: #FFFFFF;
     padding-bottom: 10px;
+    top: 100px;
 }
 .preco{
     position: relative;
     left: 350px;
-    bottom: 200px;
-}
+ 
+} 
+
 .preco h1{
     font-family: 'Public Sans';
     font-style:normal;
@@ -88,7 +99,7 @@ h2{
     margin: 20px;
     padding: 10px;
     position: relative;
-    left: 270px;
+    left: 150px;
     bottom: 180px;
 }
 button{
@@ -105,9 +116,7 @@ button{
 .btn p{
     font-family: 'Inter';
     font-style: normal;
-    /* font-weight: 400; */
     font-size: 20px;
-    /* line-height: 18px; */
     text-align: center;
     mix-blend-mode: normal;
 }
@@ -118,6 +127,7 @@ button{
     background-color:black;
     position: relative;
     bottom: 120px;
+    top: 10px;
 }
 #quantidade{
     display: flex;
@@ -127,9 +137,8 @@ button{
     border: 1px solid #FFFFFF;
     max-width: 100px;
     height: 50px;
-    display: flex;
     margin: 25px;
-    left: 500px;
+    left: 450px;
 }
 #minus{
     float:left;
@@ -170,7 +179,7 @@ button{
     color: black;
 }
 #quantrow {
-    position: relative;
+    /* position: relative; */
     left: 350px;
     bottom: 175px;
 }
@@ -185,8 +194,7 @@ button{
     color: #FFFFFF;
     mix-blend-mode: normal;
     opacity: 0.5;
-    position: relative;
-    left: 35px;
+    left: 350px;
 }
 .btn{
     color: white;
@@ -198,3 +206,4 @@ button{
     position: absolute;
     left: 1050px;
 }
+

@@ -13,16 +13,16 @@
         <div class="row d-flex justify-content-center">
         </div>
         <div class="grup">
-          <img src="/images/<%= product.image %>" alt="product image" class="product-detail-img">
+          <img src="/images/Produtos/<%= product.image %>" alt="product image" class="product-detail-img">
           <div class="barra-produto"></div>
           <div class="txt-grup">
             <h2 class="products-title"><%= product.name %></h2>
             <div class="preco">
-            <h1>R$69,99</h1>
+            <h1>R$ <%= product.price%></h1>
             </div>
             <div id="quantrow" class="row">
               <div class="col-md-5">
-                <p>Quantidade:</p>
+                <p></p>
               </div>
               <div class="col-md-1">
                 <p></p>
@@ -35,11 +35,11 @@
               </div>
             </div>
             <div id="descricao">
-              <h3 class="description-product">Informações sobre o produto:<br><%= product.description %> </h3>
+            <h3 class="description-product"><strong>Informações sobre o produto:</strong><br><%= product.description %> </h3>
             <br>
-            <h4 class="caract-product">Características:<br><%= product.characteristics %> </h4>
+            <h3 class="harmonize-product"><strong>Harmoniza com:</strong><br><%= product.harmonize %> </h3>
              </div>
-             <button type="button" class="btn bb" (click)="addCarrinho()"><p>Adicionar ao carrinho</p></button>
+             <button type="button" class="btn bb" (click)="addCarrinho()"><p>Comprar</p></button>
             </div>
             </div>
           </div>
