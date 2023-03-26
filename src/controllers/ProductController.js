@@ -42,7 +42,6 @@ const ProductController = {
     else return res.status(400).json({ error: 'Produto não encontrado.' })
   },
 
-
   /**
    * EJS
    */

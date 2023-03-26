@@ -3,16 +3,10 @@
   <%- include('includes/head', { title: 'Início' }) %>
 
   <body>
-    
-    <!-- Header -->
-    <%- include('includes/header') %>
-    <!-- /Header -->
+        <%- include('includes/header') %>
 
-      <!-- Banner -->
       <div class="banner"></div>
-      <!-- /Banner -->
 
-      <!-- todos os produtos -->
       <div class="container products-wrapper">
         <div class="row">
           <div class="col-12">
@@ -20,40 +14,34 @@
           </div>
           <% if (products.length> 0) {
             products.forEach((product) => {
-            let finalPrice = (product.price * ((100 - product.discount) / 100)).toFixed(0)
+            let finalPrice = (product.price).toFixed(2)
           %>
           <div class="col-12 col-sm-6 col-lg-3">
             <section class="product-box">
               <a href="/product/detail/<%= `${product.id}/` %>">
                 <figure class="product-box_image">
-                  <img src="/images/products/<%= product.image %>" alt="imagen do produto">
+                  <img src="/images/Produtos/<%= product.image %>" alt="imagen do produto">
                 </figure>
                 <article class="product-box_data">
-                  <h2>$<%= toThousand(finalPrice) %>
+                  <h2>R$<%= toThousand(finalPrice) %>
                   </h2>
-                  <span>
-                    <%= product.discount %>% OFF
-                  </span>
                   <p>
                     <%= product.name %>
                   </p>
-                  <i class="fas fa-truck"></i>
                 </article>
               </a>
             </section>
           </div>
           <% })} else { %>
             <div class="col-12">
-              <h2 class="products-title" style="color: tomato;">Não há produtos correspondentes a essa pesquisa</h2>
+              <h2 class="products-title" style="color: tomato;">Ei!! Infelizmente não foi possível encontrar esse produto. Veja se digitou corretamente o que procura</h2>
             </div>
           <% } %>
         </div>
       </div>
-      <!-- /todos os produtos -->
 
-      <!-- footer -->
       <%- include('includes/footer') %>
-      <!-- /footer -->
+
   </body>
 
 </html>

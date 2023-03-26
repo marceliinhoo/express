@@ -20,5 +20,5 @@ app.use(express.static(path.resolve("public")))
 app.use(routes)
 
 app.listen(3000, () => {
-  console.log('Servidor Rodando!')
+  console.log('Uhull, Servidor está Rodando!')
 })

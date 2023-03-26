@@ -31,14 +31,30 @@
         </div>
         </section>
         <main>
-          <a href="../Tela de Detalhes/index.html"><div class="BEER"><img src="../images/Young-stout.PNG" alt="Young Stout"><p>VIKINGS- Young´s Stout<br> R$ 69,99</p></div></a>
-          <a href="../Tela de Detalhes/index.html"><div class="BEER"><img src="../images/Marwhal - Black Beer.PNG" alt="Marwhal - Black Beer"><p>Marwhal - Black Beer<br> R$ 69,99</p></div></a>
-          <a href="../Tela de Detalhes/index.html"><div class="BEER"><img src="../images/Ouropretana - English Pale Ale.PNG" alt="Ouropretana - English Pale Ale"><p>Ouropretana - English Pale Ale<br> R$ 89,99</p></div></a>
-          <a href="../Tela de Detalhes/index.html"><div class="BEER"><img src="../images/Ouropretana - Golden Lager.PNG" alt="Ouropretana - Golden Lager"><p>Ouropretana - Golden Lager<br> R$ 69,99</p></div></a>
-          <a href="../Tela de Detalhes/index.html"><div class="BEER"><img src="../images/Negra Modelo - Honey beer.PNG" alt="Negra Modelo - Honey beer"><p>Negra Modelo - Honey beer<br> R$ 89,99</p></div></a>
-          <a href="../Tela de Detalhes/index.html"><div class="BEER"><img src="../images/Impeesa - Porter.PNG" alt="Impeesa - Porter"><p>Impeesa - Porter<br> R$ 69,99</p></div></a>
-          <a href="../Tela de Detalhes/index.html"><div class="BEER"><img src="../images/Cornet -.PNG" alt="Cornet- Pale Ale"><p>Cornet- Pale Ale<br> R$ 49,99</p></div></a>
-          <a href="../Tela de Detalhes/index.html"><div class="BEER"><img src="../images/PALE -.PNG" alt="VOLCELEST - Golden Pale"><p>VOLCELEST - Golden Pale<br> R$ 59,99</p></div></a>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <section class="product-box">
+              <a href="/product/detail/<%= product.id %>">
+                <figure class="product-box_image">
+                  <img src="/images/products/<%= product.image %>" alt="imagen do produto">
+                </figure>
+                <article class="product-box_data">
+                  <h2>
+                    <%= toThousand(finalPrice) %>
+                  </h2>
+                  <span>
+                    <%= product.discount %> %OFF
+                  </span>
+                  <p>
+                    <%= product.name %>
+                  </p>
+                  <i class="fas fa-truck"></i>
+                </article>
+              </a>
+            </section>
+          </div>
+        <% }) %>
+      </div>
+    </div>
          <input type="submit" value="CARREGAR">
         </main>
 

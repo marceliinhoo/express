@@ -1,7 +1,7 @@
 [
 	{
 		"id": "1",
-		"name": "Double Chocolate Stout",
+		"name": "Beer: Double Chocolate Stout",
 		"description":"Uma cerveja de cor preta, opaca, com formação de espuma marrom claro. No aroma, apresenta notas de café, chocolate amargo e tosta. Na boca, possui corpo médio, textura macia, amargor delicado e boa persistência. Essa cerveja possui uma cápsula de nitrogênio inserida na lata, o que confere um corpo mais cremoso e textura macia.",
 		"harmonize":"",
 		"price": 69.99,
@@ -9,7 +9,7 @@
 	},
   {
 		"id": "2",
-		"name": "Barreled Treasure - Imperial Stout",
+		"name": "Beer: Barreled Treasure - Imperial Stout",
 		"description":"",
 		"harmonize":"",
 		"price": 105.00,
@@ -17,7 +17,7 @@
 	},
 	{
 		"id": "3",
-		"name": "Ouropretana - Brown Potter",
+		"name": "Beer: Ouropretana - Brown Potter",
 		"description":"Maturada em barris de madeira amburana possui uma presença marcante de malte e madeira amburana, de coloração marrom escuro, brilhante e com espuma bege, cremosa e persistente. No sabor notas de café e chocolate proveniente dos maltes torrados e nuances bem leves de madeira amburana (parte da produção fica 30 dias maturando nos barris). Baixo amargor, comum entre as cervejas do estilo Brown Porter.",
 		"harmonize":"",
 		"price": 55.00,
@@ -25,7 +25,7 @@
 	},
 	{
 		"id": "4",
-		"name": "Ouropretana - English Pale Ale",
+		"name": "Beer: Ouropretana - English Pale Ale",
 		"description":"",
 		"harmonize":"",
 		"price": 89.00,
@@ -33,7 +33,7 @@
 	},
 	{
 		"id": "5",
-		"name": "Ouropretana - Golden Lager",
+		"name": "Beer: Ouropretana - Golden Lager",
 		"description":"",
 		"harmonize":"",
 		"price": 99.99,
@@ -41,7 +41,7 @@
 	},
 	{
 		"id": "6",
-		"name": "Negra Modelo - Honey beer",
+		"name": "Beer: Negra Modelo - Honey beer",
 		"description":"A cerveja Negra Modelo é produzida no México no estilo Vienna Lager. A cerveja Negra Modelo possui coloração âmbar, espuma cremosa e abundante. Cerveja equilibrada entre o amargor e a doçura, a cerveja Negra Modelo apresenta notas de tostado e caramelo.",
 		"harmonize":"Carnes brancas como peru e frango, pizza e lombo assado.",
 		"price": 65.00,
@@ -49,7 +49,7 @@
 	},
 	{
 		"id": "7",
-		"name": "Impeesa - Porter",
+		"name": "Beer: Impeesa - Porter",
 		"description":"",
 		"harmonize":"",
 		"price": 65.00,
@@ -57,7 +57,7 @@
 	},
 	{
 		"id": "8",
-		"name": "Sierra Nevada",
+		"name": "Beer: Sierra Nevada",
 		"description":"",
 		"harmonize":"",
 		"price": 35.00,
