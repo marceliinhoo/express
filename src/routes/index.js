@@ -3,57 +3,35 @@ const router = express.Router()
 
 const mainController = require('../controllers/MainController')
 const productController = require('../controllers/ProductController')
+const loginController = require('../controllers/LoginController')
 
 // # Main
 // GET ALL
 router.get('/', mainController.index)
-// GET ALL
 router.get('/search', mainController.search)
+router.get('/', productController.slice)
+/* router.post('/home',mainController.age) */
+
 
 router.get('/sobrenos', mainController.sobre)
 router.get('/cadastro', mainController.cadastro)
-router.get('/perfil', mainController.perfil)
-router.get('/login', mainController.login)
+router.get('/minha-conta', mainController.perfil)
 router.get('/carrinho', mainController.carrinho)
-// # Product
-// GET - EJS Detail - View
+
+
+
+//LoginController
+router.get('/login', loginController.login)
+router.get('/search', loginController.pesquisa)
+router.post('/login',loginController.acess)
+
+
 router.get('/product/detail/:id', productController.detailEJS)
-// GET - EJS Create Form - View
 router.get('/product/create', productController.createFormEJS)
-// GET - EJS Update Form - View
+router.get('/product/nossoproduto', productController.productView)
 router.get('/product/update/:id', productController.updateFormEJS)
-// POST - EJS Create
 router.post('/product', productController.createEJS)
-// PUT - EJS Update
 router.put('/product/:id', productController.updateEJS)
-// DELETE - EJS Delete
 router.delete('/product/:id', productController.deleteEJS)
-
-
-/* router.get('/product/detail/:id', function(req, res) {
-    res.send('<button id="plus">Mais</button>' +
-             '<button id="minus">Menos</button>' +
-             '<p id="valor">' + valor + '</p>');
-  });
-  document.getElementById('plus').addEventListener('click', function() {
-    valor++;
-    document.getElementById('valor').innerHTML = valor;
-  });
-  document.getElementById('minus').addEventListener('click', function() {
-    valor--;
-    document.getElementById('valor').innerHTML = valor;
-  }); */
-
-// // # Product
-// // GET ALL
-// router.get('/product', productController.showAll)
-// // GET By Id
-// router.get('/product/:id', productController.showById)
-// // POST
-// router.post('/product', productController.create)
-// // PUT
-// router.put('/product/:id', productController.update)
-// // DELETE
-// router.delete('/product/:id', productController.delete)
 
 module.exports = router

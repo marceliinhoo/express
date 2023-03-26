@@ -1,5 +1,6 @@
 const products = require('../database/products.json')
 
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
 const MainController = {
@@ -21,17 +22,14 @@ const MainController = {
   sobre: (req, res) => {
     res.render('sobrenos', { })
   },
-   cadastro: (req, res) => {
+  cadastro: (req, res) => {
     res.render('cadastro', { })
   },
   perfil: (req, res) => {
-    res.render('perfil', { })
-  },
-  login: (req, res) => {
-    res.render('login', { })
+    res.render('minha-conta', { })
   },
   carrinho: (req, res) => {
     res.render('carrinho', { })
-  }
+  },
 }
 module.exports = MainController

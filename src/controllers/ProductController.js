@@ -3,6 +3,13 @@ const products = require('../database/products.json')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
 const ProductController = {
+  
+  productView: (req, res) => {
+		res.render('product', {
+			products,
+			toThousand
+		})
+	},
   showAll: (req, res) => {
     res.json(products)
   },
@@ -58,6 +65,7 @@ const ProductController = {
   createFormEJS: (req, res) => {
     res.render('product-create-form')
   },
+
   // Create product
   createEJS: (req, res) => {
     let newProduct = {
@@ -105,6 +113,11 @@ const ProductController = {
         res.redirect('/')
     }
     else return res.status(400).json({ error: 'Produto não encontrado.' })
-  }
+  },
+  slice: (req,res) => {
+    const produtosDestaque = products.slice(0, 3);
+     res.render('index', { products: produtosDestaque });
+   },
 }
+
 module.exports = ProductController
