@@ -2,20 +2,36 @@
   <%- include('includes/head', { title: 'Início' }) %>
   <body>
     <%- include('includes/header') %>
-    <main>
-      <h1><img src="/images/logo.oficial.png" alt="VIKINGS BEERHOUSE" width="100%" ></h1>
-      <h2>V I K I N G S <br> BEERHOUSE</h2>
-      <div class="destaque"> DESTAQUES </div>
-      <br>
-      <br>
-      <nav>
-      <ul>
-        <li><a href="/product/detail/<%= products.id %>"><p> R$20,00 </p></a></li>
-        <li><a href="#"><img src="imagens\c.png" alt="VIKINGS BEERHOUSE" width="500px" height="700px"><p> R$20,00 </p></a></li>
-        <li><a href="#"><img src="imagens\i.jpg" alt="VIKINGS BEERHOUSE" width="500px" height="700px"><p> R$25,99 </p></a></li>
-      </ul>
-    </nav>
-    </main>
+    <div class="container products-wrapper">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="products-title">Ofertas</h2>
+      </div>
+      <% products.forEach((product) => { let finalPrice = (product.price * ((100 - product.discount) / 100)).toFixed(0) %>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <section class="product-box">
+            <a href="/product/detail/<%= product.id %>">
+              <figure class="product-box_image">
+                <img src="/images/products/<%= product.image %>" alt="imagen do produto">
+              </figure>
+              <article class="product-box_data">
+                <h2>
+                  <%= toThousand(finalPrice) %>
+                </h2>
+                <span>
+                  <%= product.discount %> %OFF
+                </span>
+                <p>
+                  <%= product.name %>
+                </p>
+                <i class="fas fa-truck"></i>
+              </article>
+            </a>
+          </section>
+        </div>
+      <% }) %>
+    </div>
+  </div>
     <%- include('includes/footer') %>
 
   </body>
