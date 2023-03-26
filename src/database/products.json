@@ -1,27 +1,27 @@
 [
 	{
 		"id": "1",
-		"name": "VIKINGS - Young's Stout",
+		"name": "Double Chocolate Stout",
 		"description":"Uma cerveja de cor preta, opaca, com formação de espuma marrom claro. No aroma, apresenta notas de café, chocolate amargo e tosta. Na boca, possui corpo médio, textura macia, amargor delicado e boa persistência. Essa cerveja possui uma cápsula de nitrogênio inserida na lata, o que confere um corpo mais cremoso e textura macia.",
 		"harmonize":"",
 		"price": 69.99,
-		"image": "Young-stout.png"
+		"image": "Young.Stout.Grande.jpg"
 	},
   {
 		"id": "2",
-		"name": "VOLCELEST - Golden Pale",
+		"name": "Barreled Treasure - Imperial Stout",
 		"description":"",
 		"harmonize":"",
-		"price": 75.00,
-		"image": "PALE -.PNG"
+		"price": 105.00,
+		"image": "Barreled.Treasure. Imperial.Stout.Grande.jpg"
 	},
 	{
 		"id": "3",
-		"name": "Narwhal - Black Beer",
-		"description":" Narwhal é uma Imperial Stout inspirada nas criaturas misteriosas que habitam as profundezas do gelado Oceano Ártico. Maltes: Two-row Pale, Maltes Caramelizados, Chocolate, Carafa III, Mel e Cevada Torrada. Lúpulo: Challenger, Magnum. Além disso, como o BigFoot de Sierra Nevada é uma cerveja muito interessante de envelhecer. Sabores e notas complexas permeiam esta cerveja à medida que envelhece.",
+		"name": "Ouropretana - Brown Potter",
+		"description":"Maturada em barris de madeira amburana possui uma presença marcante de malte e madeira amburana, de coloração marrom escuro, brilhante e com espuma bege, cremosa e persistente. No sabor notas de café e chocolate proveniente dos maltes torrados e nuances bem leves de madeira amburana (parte da produção fica 30 dias maturando nos barris). Baixo amargor, comum entre as cervejas do estilo Brown Porter.",
 		"harmonize":"",
 		"price": 55.00,
-		"image": "Marwhal - Black Beer.PNG"
+		"image": "ouropretana.brown.potter.jpg"
 	},
 	{
 		"id": "4",
@@ -29,7 +29,7 @@
 		"description":"",
 		"harmonize":"",
 		"price": 89.00,
-		"image": "Ouropretana - English Pale Ale.PNG"
+		"image": "Ouropretana.English.Pale.Ale.Grande.jpg"
 	},
 	{
 		"id": "5",
@@ -37,7 +37,7 @@
 		"description":"",
 		"harmonize":"",
 		"price": 99.99,
-		"image": "Ouropretana - Golden Lager.PNG"
+		"image": "Ouropretana.Golden.Lager.Grande.PNG"
 	},
 	{
 		"id": "6",
@@ -45,7 +45,7 @@
 		"description":"A cerveja Negra Modelo é produzida no México no estilo Vienna Lager. A cerveja Negra Modelo possui coloração âmbar, espuma cremosa e abundante. Cerveja equilibrada entre o amargor e a doçura, a cerveja Negra Modelo apresenta notas de tostado e caramelo.",
 		"harmonize":"Carnes brancas como peru e frango, pizza e lombo assado.",
 		"price": 65.00,
-		"image": "Beer Negra.jpg"
+		"image": "Negra.Modelo.Grande.jpg"
 	},
 	{
 		"id": "7",
@@ -53,14 +53,14 @@
 		"description":"",
 		"harmonize":"",
 		"price": 65.00,
-		"image": "Impeesa - Porter.PNG"
+		"image": "Impeesa.Porter.PNG"
 	},
 	{
 		"id": "8",
-		"name": "Cornet- Pale Ale",
+		"name": "Sierra Nevada",
 		"description":"",
 		"harmonize":"",
 		"price": 35.00,
-		"image": "Cornet -.PNG"
+		"image": "Sierra.Nevada.jpg"
 	}
 ]

@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html>
-<!-- Include Head -->
+
 <%- include('includes/head', {title: 'Detalhe do Produto' }) %>
 
   <body>
-    <!-- Header -->
-    <%- include('includes/header') %>
-    <!-- /Header -->
 
-      <!-- product detail -->
-        <div class="container mt-3">
-        <div class="row d-flex justify-content-center">
+    <%- include('includes/header') %>
+
+      <div class="container products-wrapper">
+        <div class="row">
+          <div class="col-2">
+          </div>
         </div>
         <div class="grup">
-          <img src="/images/Produtos/<%= product.image %>" alt="product image" class="product-detail-img">
-          <div class="barra-produto"></div>
-          <div class="txt-grup">
-            <h2 class="products-title"><%= product.name %></h2>
-            <div class="preco">
-            <h1>R$ <%= product.price%></h1>
+          <div class="row">
+            <div class="col-2 col-lg-8">
+              <img src="/images/Produtos/<%= product.image %>" alt="product image" class="product-detail-img">
             </div>
-            <div id="quantrow" class="row">
-              <div class="col-md-5">
-                <p></p>
-              </div>
-              <div class="col-md-1">
-                <p></p>
-              </div>
-              <div class="col-md-5" id="quantidade">
-                <input type="button" id="minus" value="-" (click)="process(-1)" (click)="parcial()" />
-                <input [(ngModel)]="quant" id="quant" name="quant" class="text" size="1" value="1" type="text"
-                  maxlength="2" />
-                <input type="button" id="plus" value="+" (click)="process(1)" (click)="parcial()">
-              </div>
-            </div>
-            <div id="descricao">
-            <h3 class="description-product"><strong>Informações sobre o produto:</strong><br><%= product.description %> </h3>
-            <br>
-            <h3 class="harmonize-product"><strong>Harmoniza com:</strong><br><%= product.harmonize %> </h3>
-             </div>
-             <button type="button" class="btn bb" (click)="addCarrinho()"><p>Comprar</p></button>
-            </div>
+            <div class="col-12 col-lg-4">
+              <article class="product-detail-info">
+                <h2 class="product-title">
+                  <%= product.name %>
+                </h2>
+                  <p class="product-price">
+                    <span>R$<%= toThousand(product.price) %></span>
+                  </p>
+                <p class="Information">Informações sobre o produto:</p>
+                <p class="product-description">
+                  <%= product.description %>
+                </p>
+                <ul class="actions-list">
+                  <div class="col-md-5" id="quantidade">
+                    <input type="button" id="minus" value="-" (click)="process(-1)" (click)="parcial()" />
+                    <input [(ngModel)]="quant" id="quant" name="quant" class="text" size="1" value="1" type="text"
+                      maxlength="2" />
+                    <input type="button" id="plus" value="+" (click)="process(1)" (click)="parcial()">
+                  </div>
+                  <button type="button" class="btn bb" (click)="addCarrinho()"><p>Comprar</p></button>
+                </ul>
+              </article>
+
             </div>
           </div>
         </div>
-      </main>
-      </body>
+      </div>
+
+      <%- include('includes/footer') %>
+
+  </body>
+
+</html>

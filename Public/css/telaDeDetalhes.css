@@ -4,30 +4,19 @@
     box-sizing: border-box;
 }
 
-.mt-3{
-    background-color: black;
-    width: 1500px;
-    height: 800px;
-    Top: 265px;
-    Left: 41px;
-    border-radius: 20px;
-    margin: 200px;
-   
-}
+.products-wrapper {
+    margin-top: 70px;
+    margin-bottom: 30px;
+  }
 
 .product-detail-img {
-    width: 35%;
     display: block;
     margin: auto;
 }
 
-.products-title{
-    font-size: 3em;
-    font-weight: 850;
-    color: #ffff;
-    text-align: center;
-    top: 5px;
-    left: 100px;
+.product-img {
+    width: 20%;
+    bottom: 20px;
 }
 
 h3{
@@ -36,34 +25,10 @@ h3{
     font-size: 1em;
     font-weight: 150;
 }
-
 a:hover{
     color: yellow
 }
-.grup{
-    display: flex;
-    align-items: center;
-}
-.grup img{
-    margin: 0 45px;
-}
-.barra-produto {
-    width: 25px;
-    height: 577px;
-    background-color: rgb(255, 255, 255);
-    margin: 50px;
-    border-radius: 10px;
-}
-.txt-grup{
-    flex-direction: column; 
-    align-items: center;
-    justify-content: center;
-    top: 100px;
-    margin-bottom: 180px;
-}
-.produto img{
-    margin: 50px;
-}
+
 h2{
     font-size: 50px;
     font-family: 'Public Sans';
@@ -76,32 +41,7 @@ h2{
     padding-bottom: 10px;
     top: 100px;
 }
-.preco{
-    position: relative;
-    left: 350px;
- 
-} 
 
-.preco h1{
-    font-family: 'Public Sans';
-    font-style:normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 26px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: -0.3px;
-    color: #FFFFFF;
-
-}
-.bb{
-    margin: 20px;
-    padding: 10px;
-    position: relative;
-    left: 150px;
-    bottom: 180px;
-}
 button{
     font-family: 'Inter';
     font-style: normal;
@@ -119,16 +59,9 @@ button{
     font-size: 20px;
     text-align: center;
     mix-blend-mode: normal;
+    color: white;
 }
-#descricao{
-    width: 90%;
-    padding: 15px;
-    border-radius: 10px;
-    background-color:black;
-    position: relative;
-    bottom: 120px;
-    top: 10px;
-}
+
 #quantidade{
     display: flex;
     justify-content: center;
@@ -137,9 +70,9 @@ button{
     border: 1px solid #FFFFFF;
     max-width: 100px;
     height: 50px;
-    margin: 25px;
-    left: 450px;
+    margin-left: 100px;
 }
+
 #minus{
     float:left;
     background-color:#FFFFFF;
@@ -174,15 +107,10 @@ button{
     margin: 0px;
 }
            
-.btn:hover{
-    background-color: white;
+/* .btn:hover{
     color: black;
-}
-#quantrow {
-    /* position: relative; */
-    left: 350px;
-    bottom: 175px;
-}
+    background-color: white;
+}  */
 
 .col-md-5 p{
     font-family: 'Inter';
@@ -199,11 +127,47 @@ button{
 .btn{
     color: white;
     background-color: black;
-    width: 300px;
-    height: 50px;
+    width: 250px;
+    height: 45px;
     border: 2px solid #FFFFFF;
     border-radius: 10px;
-    position: absolute;
     left: 1050px;
+    display: inline-block;
+    margin: 20px;
+    padding: 10px;
+    line-height: 1;
 }
 
+.product-title{
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+    color: #FFFFFF;
+    padding-bottom: 10px;
+}
+
+.product-price{
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-size: 30px;
+    line-height: 44px;
+    letter-spacing: 1.5px;
+    color: #FFFFFF;
+    padding-bottom: 10px;
+}
+
+.Information{
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 44px;
+    color: #FFFFFF;
+}
+.product-description{
+    color: #FFFFFF;
+    font-size: 15px;
+}

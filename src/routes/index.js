@@ -30,6 +30,19 @@ router.put('/product/:id', productController.updateEJS)
 router.delete('/product/:id', productController.deleteEJS)
 
 
+/* router.get('/product/detail/:id', function(req, res) {
+    res.send('<button id="plus">Mais</button>' +
+             '<button id="minus">Menos</button>' +
+             '<p id="valor">' + valor + '</p>');
+  });
+  document.getElementById('plus').addEventListener('click', function() {
+    valor++;
+    document.getElementById('valor').innerHTML = valor;
+  });
+  document.getElementById('minus').addEventListener('click', function() {
+    valor--;
+    document.getElementById('valor').innerHTML = valor;
+  }); */
 
 // // # Product
 // // GET ALL
