@@ -19,11 +19,10 @@ router.get('/minha-conta', mainController.perfil)
 router.get('/carrinho', mainController.carrinho)
 
 
-
 //LoginController
 router.get('/login', loginController.login)
-router.get('/search', loginController.pesquisa)
-router.post('/login',loginController.acess)
+router.get('/search', loginController.search)
+
 
 
 router.get('/product/detail/:id', productController.detailEJS)
