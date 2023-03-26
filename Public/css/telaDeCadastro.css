@@ -31,7 +31,7 @@ h5{
   height: 150px;
   }
   
-  .card p{
+  .card-form p{
   display: flex;
   flex-flow: wrap;
   font-family: 'Public Sans';
