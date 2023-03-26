@@ -3,19 +3,21 @@
   <%- include('includes/head', { title: 'Início' }) %>
     <body>
       <%- include('includes/header') %>
-        <div id="login-container">
-<!--             <div class="showcase">
-                <img src="../images/Logo sem fundo 600x600 sem opacidade.png" alt="logotipo" class="bg-image" />
-            </div> -->
-                <h1>LOGIN</h1>
-                <form action="" method="get">
-                <input type="email" id="email" placeholder="E-MAIL" autocomplete="off">
-                <input type="password" id="password" placeholder="SENHA" autocomplete="off">
-                <div class="esqueci-senha">
-                <a href="#" id="forgot-pass">Esquecer a senha?</a></div>
-                <button type="submit">Entrar</button>
+
+        <div class="login-container">
+          <div class="title-login">
+            <h1>LOGIN</h1>
+          </div>
+          <div class='acess-login'>
+                <form action="/login" method="POST">
+                <input type="email" id="email" placeholder="E-mail" autocomplete="off">
+                <input type="password" id="password" placeholder="Senha" autocomplete="off">
             </form>
-            <div class="register-container">
+          </div>
+          <div class="esqueci-senha">
+            <a href="#" id="forgot-pass">Esquecer a senha?</a></div>
+          <button type="submit">Entrar</button>
+          <div class="register-container">
                 <a href="/cadastro">Criar Conta</a>
             </div>
         </div>

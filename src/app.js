@@ -2,6 +2,7 @@ const routes = require('./routes/index')
 const path = require("path")
 const express = require('express')
 const app = express()
+
 // captura na forma de objeto literal tudo o que vem de um formulário
 app.use(express.urlencoded({ extended: false }))
 // converte as informações em formato JSON
@@ -13,6 +14,7 @@ app.set("view engine", "ejs")
 app.set("views", path.resolve("src", "views"))
 // liberando acesso a pasta public
 app.use(express.static(path.resolve("public")))
+
 
 /**
  * Rotas
