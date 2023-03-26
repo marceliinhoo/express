@@ -1,13 +1,6 @@
 a:hover{
   color: yellow
 }
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
- background-color: black;
-}
-
 .card-form {
   padding: 40px;
   margin: 100px 100px;
@@ -26,20 +19,6 @@ height: 380px;
 width: 480px;
 }
 
-main > aside {
-font-size: 0.9rem;
-text-align: center;
-padding: 4rem;
-max-width: 35rem;
-max-height: 43rem;
-margin-top: 4rem;
-margin-bottom: 4rem;
-position: relative;
-right: 0rem;
-left: 0rem;
-bottom: 0rem;
-top: 0rem;
-}
 h5{
   font-family: 'Abel';
   font-style: normal;
@@ -66,7 +45,7 @@ h5{
   margin: 10px;
   }
 
-.container {
+.conteudo {
   background-color: black;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
