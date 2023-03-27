@@ -12,7 +12,7 @@ const LoginController = {
       res.send('Credenciais inválidas');
     }
   },
-  pesquisa: (req, res) => {
+  search: (req, res) => {
     let search = req.query.keywords
     let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search))
     res.render('results', {
