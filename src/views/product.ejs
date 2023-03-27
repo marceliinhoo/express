@@ -8,6 +8,29 @@
 		<%- include('includes/header') %>
 		<!-- /Header -->
 		<div class="destaque"> Nossos Produtos </div>
+
+		<section classe="seach-product">
+			<div class="products-disp">
+				<label>Filtrar por:</label>
+				<select name="Filtro">
+				<option value="Stout">Stout</option>
+				<option value="Pilsen">Pilsen</option>
+				<option value="Lager">Lager</option>
+				<option value="Pale">Pale</option>
+		</select>
+		  </div>
+			<div class="ordenacao">
+			<label>Ordenar por:</label>
+			<select name="Ordenar">
+			<option value="Popular">Mais Popular</option>
+			<option value="Recente">Mais Recente</option>
+			<option value="Oferta">Oferta</option>
+			<option value="Maior">Maior Preço</option>
+			<option value="Menor">Menor Preço</option>
+		  </select>
+		  </div>
+		</section>
+
 		<div class="container products-wrapper">
 			<div class="row">
 			  <div class="col-12">
