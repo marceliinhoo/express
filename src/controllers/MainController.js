@@ -31,5 +31,8 @@ const MainController = {
   carrinho: (req, res) => {
     res.render('carrinho', { })
   },
+  produtos: (req, res) => {
+    res.render('produtos', { })
+  }
 }
 module.exports = MainController

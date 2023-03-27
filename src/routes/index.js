@@ -17,7 +17,7 @@ router.get('/sobrenos', mainController.sobre)
 router.get('/cadastro', mainController.cadastro)
 router.get('/minha-conta', mainController.perfil)
 router.get('/carrinho', mainController.carrinho)
-
+router.get('/produtos', mainController.produtos)
 
 //LoginController
 router.get('/login', loginController.login)
