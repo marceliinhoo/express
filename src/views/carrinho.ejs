@@ -1,75 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <%- include('includes/head', { title: 'Início' }) %>
+  <%- include('includes/head', { title: 'Minhas Compras' }) %>
 
 <body>
   <%- include('includes/header') %>
+
   <main>
-    <div class="container">
-        <h1 class="tittle"> Meu Carrinho</h1>
-        <h5 id="Continue">Continuar Comprando          
-            <a href="#"><img src="../images/seta.png" alt=""></a>
-        </h5>
-        <div class="descricao">
-            <li>PRODUTO</li>
-            <li>DESCRIÇÃO</li>
-            <li>QTD.</li>
-            <li>PREÇO</li>
+    <div class="meu-carrinho">
+      <div class="tittle-meucarrinho">
+        <h1> Meu Carrinho</h1>
         </div>
-        <div class=" container-fluid" id="container-produto">
-      
-          <div class="row" id="produto" *ngFor="let item of carrinho">
-            <div class="col-md-2"> 
-            <a href="../Tela de Detalhes/index.html"><div class="BEER"><img src="../images/Young-stout.PNG" alt="Young Stout"><p id="nome"></p> </div></a>
-             <div class="col-md-3">
-              <p id="nome">VIKINGS <br>Young´s Stout</p>
+
+          <div class=" container-fluid" id="carrinho-produto">
+            <div class="quantrow" id="produto" *ngFor="let item of carrinho"></div>
+              <div class="col-md-4"> 
+              <img  src=/image/icon/bread.png alt="">
             </div>
-            <div class="col-md-4">
-                <input type="button" id="minus" value="-" (click)="process(-1)" (click)="parcial()" />
-                <input [(ngModel)]="quant" id="quant" name="quant" class="text" size="1" value="1" type="text"
-                      maxlength="2" />
-                <input type="button" id="plus" value="+" (click)="process(1)" (click)="parcial()">
-            </div>
-            </div>
-            <div class="col-md-5">
-                <p id="preco">R$69,99</p>
+              <div class="col-md-3">
+                <p id="nome">Nome do Produto</p>
+                <p id="preco">R$ 0,00</p>
+              </div>
+              <div class="col-md-3">
+                <p class="bastian" id="quant-product">x 1</p>
+              </div>
+              <div class="col-md-3">
+                <p id="precoParcial">R$ 0,00</p>
+              </div>
             </div>
           </div>
-        </div>
-        <h6>Sugestões Vikings para você:</h6>
-        <div class="sugestao">
-        <a href="../Tela de Detalhes/index.html"><img src="../images/Impeesa - Porter.PNG" alt="Impeesa - Porter"><p>Impeesa - Porter<br> R$ 69,99</p></a>
-        <a href="../Tela de Detalhes/index.html"><img src="../images/Cornet -.PNG" alt="Cornet- Pale Ale"><p>Cornet- Pale Ale<br> R$ 49,99</p></a>
-        <a href="../Tela de Detalhes/index.html"><img src="../images/PALE -.PNG" alt="VOLCELEST - Golden Pale"><p>VOLCELEST - Golden Pale<br> R$ 59,99</p></a>
-    </div>
-    <!-- <div class="comprar">
-        <h2> Resumo do pedido</h2>
-        <div class="col-re-1"> 
-                <p>1</p>
+          <div class="confirma">
+            <hr>
+            <h3 id="total"><strong>TOTAL:</strong> R$ 0,00 </h3>
+            <div class="d-flex justify-content-center">
+              <button type="submit" id="continuar" class="btn mr-3" routerLink="/product/nossoproduto"><strong>Continuar
+                  comprando</strong></button>
+              <button type="submit" id="comprar" class="btn" [routerLink]="['/pagamento', vTotal.toFixed(2)]"><strong>Ir para
+                  Pagamento</strong></button>
             </div>
-            <div class="col-re-2">
-                <p>VIKINGS Young´s Stout</p>
-            </div>
-            <div class="col-re-3">
-                <p>R$69,99</p>
-            </div>
-        <div class="add">
-            <a href="#"><img src="../images/MacOS Maximize.png" alt=""></a>
-            <h3>Adicionar mais produtos</h3>
-        </div>    
-    <div class="frete">
-        <h4>Frete</h4>
-        <a href="#">---</a>
-    </div>
-    <div class="total">
-        <p>Total</p>
-        <a href="#">R$ 69,99</a>
-    </div>
-    <input type="submit" value="Comprar">
-    </div> -->
-    </main>   
-
+          </div>
+          
     <%- include('includes/footer') %>
   </body>
-<script src="./fontawesome/js/all.min.js"></script>
+
 </html>

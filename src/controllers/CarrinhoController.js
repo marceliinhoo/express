@@ -10,7 +10,6 @@ const CarrinhoController = {
     addItem: function(req, res){
        res.send('Item Adicionado')
     }, 
-
  };
  
 

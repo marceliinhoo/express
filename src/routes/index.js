@@ -27,6 +27,7 @@ router.get('/carrinho', CarrinhoController.carrinho)
 
 
 
+
 //ProductController
 router.get('/product/detail/:id', productController.detailEJS)
 router.get('/product/create', productController.createFormEJS)
