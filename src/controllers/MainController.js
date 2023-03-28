@@ -15,7 +15,7 @@ const MainController = {
   sobre: (req, res) => {
     res.render('sobrenos', { })
   },
-  search: (req, res) => {
+search: (req, res) => {
     let search = req.query.keywords
     let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search))
     res.render('results', {
@@ -23,15 +23,16 @@ const MainController = {
       search,
       toThousand,
     })
+  }, 
+  age: (req, res) => {
+    let age = req.query.Yes
+    if (age == req.query.Yes) {
+    res.redirect('/home');
+    }/*  else {
+      res.send('Você não pode acessar o site')
+    } */
+    console.log(age)
   },
-age: (req, res) => {
-  const age = 'Sim';
-  if (age == 'Sim') {
-  res.redirect('/home');
-  }/*  else {
-    res.render({Message});
-  } */
-},
-
 }
+
 module.exports = MainController

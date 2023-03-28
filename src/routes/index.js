@@ -20,9 +20,6 @@ router.post('/verificar-idade', mainController.age)
 router.get('/login', loginController.login)
 router.post('/login/minha-conta', loginController.acess)
 
-
-
-
 //CarrinhoController
 /* router.get('/:item', CarrinhoController.addItem) */
 router.get('/carrinho', CarrinhoController.carrinho)
