@@ -9,7 +9,7 @@
 	},
   {
 		"id": "2",
-		"name": "Beer: Pilsner - Imperial Stout",
+		"name": "Beer: Barreled Treasure - Pilsner",
 		"description":" É um estilo que surgiu na cidade de Pilsen, região da Bohemia, na Republica Tcheca, com a criação da cerveja Pilsner Urquell. As cervejas Pilsen são caracterizadas por um lúpulo acentuado no aroma e sabor, geralmente da variedade Saaz, e por sua cor dourada brilhante.",
 		"harmonize":"",
 		"price": 105.00,
@@ -25,16 +25,16 @@
 	},
 	{
 		"id": "4",
-		"name": "Beer: Munich Helles - Hofbräu Original",
-		"description":"O estilo de cerveja Munich Helles foi criado na Alemanha, em 1895, com o objetivo de concorrer com o crescente mercado da Pilsen da Bohemia. É um estilo bem maltado, de cor dourada e com amargor sutil e equilibrado revelado pelo lúpulo. Tem corpo e carbonatação medianos, espuma branca e cremosa e retrogosto de malte.",
+		"name": "Beer: Ouropretana - English Pale",
+		"description":"É um estilo bem maltado, de cor dourada e com amargor sutil e equilibrado revelado pelo lúpulo. Tem corpo e carbonatação medianos, espuma branca e cremosa e retrogosto de malte.",
 		"harmonize":"",
 		"price": 89.00,
 		"image": "Ouropretana.English.Pale.Ale.Grande.jpg"
 	},
 	{
 		"id": "5",
-		"name": "Beer: Vienna Lager - Bierland Vienna",
-		"description":"O Vienna Lager é um estilo de cerveja, que teve origem em Viena, na Áustria. Apresenta uma cerveja com cor variando do vermelho-claro ao cobre, corpo médio e um sabor suave e adocicado de malte levemente tostado que se equilibra com o amargor do lúpulo. Sua graduação alcoólica varia entre 4,7% e 5,5%. ",
+		"name": "Beer: Ouropretana - Golden Larger",
+		"description":"O Golden Lager é um estilo de cerveja, que teve origem em Viena, na Áustria. Apresenta uma cerveja com cor variando do vermelho-claro ao cobre, corpo médio e um sabor suave e adocicado de malte levemente tostado que se equilibra com o amargor do lúpulo. Sua graduação alcoólica varia entre 4,7% e 5,5%. ",
 		"harmonize":"",
 		"price": 99.99,
 		"image": "Ouropretana.Golden.Lager.Grande.PNG"
@@ -50,14 +50,14 @@
 	{
 		"id": "7",
 		"name": "Beer: Impeesa - Porter",
-		"description":"Também conhecido como Märzen, este estilo de cerveja é produzido na região da Baviera durante o mês de março (März), especialmente para as celebrações da Oktoberfest. Inspirado no estilo Vienna, apresenta aroma suave de malte tostado. Sua cor varia do âmbar alaranjado a cobre avermelhado profundo. De corpo médio, com dulçor de malte no início e final moderadamente seco.",
+		"description":"Este estilo de cerveja é produzido na região da Baviera, especialmente para as celebrações da Oktoberfest. Apresenta aroma suave de malte tostado. Sua cor varia do âmbar alaranjado a cobre avermelhado profundo. De corpo médio, com dulçor de malte no início e final moderadamente seco.",
 		"harmonize":"",
 		"price": 65.00,
 		"image": "Impeesa.Porter.PNG"
 	},
 	{
 		"id": "8",
-		"name": "Beer: Kölsch",
+		"name": "Beer: Sierra Nevada - Kölsch",
 		"description":"Pela regra geral, o nome Kölsch, só pode ser usado por aproximadamente 20 cervejarias da cidade de Köln (Colonia), na Alemanha, entretanto, existem várias cervejarias pelo mundo que produzem sua versão. Como resultado, é uma cerveja delicada, de coloração clara e brilhante. Produz uma espuma branca de baixa persistência. No aroma, revela um tom frutado, produzido pelo efeito característico da fermentação empregada nesse estilo, que está entre os principais estilos de cerveja do mundo.",
 		"harmonize":"",
 		"price": 35.00,
