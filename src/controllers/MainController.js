@@ -25,12 +25,12 @@ const MainController = {
     })
   },
 age: (req, res) => {
-  const age = value;
+  const age = 'Sim';
   if (age == 'Sim') {
   res.redirect('/home');
-  } else {
-    res.render('/login');
-  }
+  }/*  else {
+    res.render({Message});
+  } */
 },
 
 }

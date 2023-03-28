@@ -18,7 +18,8 @@ router.post('/verificar-idade', mainController.age)
 
 //LoginController
 router.get('/login', loginController.login)
-router.post('/login/minha-conta', loginController.perfil)
+router.post('/login/minha-conta', loginController.acess)
+
 
 
 
