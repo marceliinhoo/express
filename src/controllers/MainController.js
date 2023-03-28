@@ -9,6 +9,12 @@ const MainController = {
       toThousand
     })
   },
+  validacao: (req, res) => {
+    res.render('validacao', { })
+  },
+  sobre: (req, res) => {
+    res.render('sobrenos', { })
+  },
   search: (req, res) => {
     let search = req.query.keywords
     let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search))
@@ -18,14 +24,14 @@ const MainController = {
       toThousand,
     })
   },
-  sobre: (req, res) => {
-    res.render('sobrenos', { })
-  },
-  cadastro: (req, res) => {
-    res.render('cadastro', { })
-  },
-  perfil: (req, res) => {
-    res.render('minha-conta', { })
-  },
+age: (req, res) => {
+  const age = value;
+  if (age == 'Sim') {
+  res.redirect('/home');
+  } else {
+    res.render('/login');
+  }
+},
+
 }
 module.exports = MainController

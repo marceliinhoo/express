@@ -5,27 +5,30 @@ const mainController = require('../controllers/MainController')
 const productController = require('../controllers/ProductController')
 const loginController = require('../controllers/LoginController')
 const CarrinhoController = require('../controllers/CarrinhoController')
+const formularioController = require ('../controllers/FormularioController')
 
 
 
-router.get('/sobrenos', mainController.sobre)
-router.get('/cadastro', mainController.cadastro)
-router.get('/minha-conta', mainController.perfil)
-
-router.get('/', mainController.index)
+//MainController
+router.get('/', mainController.validacao)
+router.get('/home', mainController.index)
 router.get('/search', mainController.search)
-router.get('/', productController.slice)
-/* router.post('/home',mainController.age) */
+router.get('/sobrenos', mainController.sobre)
+router.post('/verificar-idade', mainController.age)
 
 //LoginController
 router.get('/login', loginController.login)
+router.post('/login/minha-conta', loginController.perfil)
+
 
 
 //CarrinhoController
 /* router.get('/:item', CarrinhoController.addItem) */
 router.get('/carrinho', CarrinhoController.carrinho)
 
-
+//FormularioController
+router.get('/cadastro', formularioController.cadastro)
+router.post('/add',formularioController.envio)
 
 
 //ProductController
