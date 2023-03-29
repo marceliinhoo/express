@@ -25,13 +25,9 @@ search: (req, res) => {
     })
   }, 
   age: (req, res) => {
-    let age = req.query.Yes
-    if (age == req.query.Yes) {
-    res.redirect('/home');
-    }/*  else {
-      res.send('Você não pode acessar o site')
-    } */
-    console.log(age)
+    if (req.body.age === 'Sim') {
+        res.render('index')
+    } else res.send('Você não pode acessar o site')
   },
 }
 
