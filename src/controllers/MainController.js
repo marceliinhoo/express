@@ -1,5 +1,4 @@
 const products = require('../database/products.json')
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
 const MainController = {
@@ -30,5 +29,4 @@ search: (req, res) => {
     } else res.send('Você não pode acessar o site')
   },
 }
-
 module.exports = MainController
