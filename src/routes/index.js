@@ -28,6 +28,12 @@ router.get('/carrinho', CarrinhoController.carrinho)
 router.get('/cadastro', formularioController.cadastro)
 router.post('/add',formularioController.envio)
 
+//UserController
+ 
+// GET - EJS Create Form - View
+router.get('/user', userController.createFormEJS)
+// POST - EJS Create
+router.post('/user',  userController.createEJS)
 
 //ProductController
 router.get('/product/detail/:id', productController.detailEJS)
