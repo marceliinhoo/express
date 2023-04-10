@@ -9,7 +9,7 @@ const MainController = {
     })
   },
   validacao: (req, res) => {
-    res.render('validacao', { })
+    res.render('validacao')
   },
   sobre: (req, res) => {
     res.render('sobrenos', { })

@@ -6,6 +6,7 @@ const productController = require('../controllers/ProductController')
 const loginController = require('../controllers/LoginController')
 const CarrinhoController = require('../controllers/CarrinhoController')
 const formularioController = require ('../controllers/FormularioController')
+const userController = require('../controllers/UserController')
 
 
 

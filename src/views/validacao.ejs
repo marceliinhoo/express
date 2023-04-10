@@ -1,7 +1,6 @@
 <html lang="pt-br">
   <%- include('includes/head', { title: 'Home' }) %>
   <body>
-
           <div class="home-age">
             <div class="agerow">
               <div class="imgAge">
@@ -9,13 +8,10 @@
             </div>
             <form method="POST" action="/verificar-idade">
               <div class="col-md-9">
-                <br>
-                <p>O consumo de bebidas alcoólicas é proibido para menores de 18 anos.</p>
-                <br>
                 <p>Você tem 18 anos ou mais?</p>
-                <br>
+                <p>O consumo de bebidas alcoólicas é proibido para menores de 18 anos.</p>
               </div>
-              <div class="age-Quest">
+              <div class="age-Quest">                 
                 <button class="ageGateButton" name='age' value="Nao" style="min-width: 105px;"><b>Não</b></button>
                 <button class="ageGateButton" name='age' value="Sim" style="min-width: 105px;"><b>Sim</b></button>                  
                 </form>
