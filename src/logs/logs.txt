@@ -1,0 +1,2 @@
+O usuario acessou a rota: /home
+O usuario acessou a rota: /

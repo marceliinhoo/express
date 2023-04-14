@@ -9,10 +9,16 @@ const formularioController = require ('../controllers/FormularioController')
 const userController = require('../controllers/UserController')
 
 
+//Multer
+const upload = require('../middlewares/upload')
+
+//log
+const  log = require('../middlewares/log')
+
 
 //MainController
-router.get('/', mainController.validacao)
-router.get('/home', mainController.index)
+router.get('/', log, mainController.validacao)
+router.get('/home',log ,mainController.index)
 router.get('/search', mainController.search)
 router.get('/sobrenos', mainController.sobre)
 router.post('/verificar-idade', mainController.age)
@@ -38,10 +44,10 @@ router.post('/user',  userController.createEJS)
 
 //ProductController
 router.get('/product/detail/:id', productController.detailEJS)
-router.get('/product/create', productController.createFormEJS)
+router.get('/product/create',upload.any(), productController.createFormEJS)
 router.get('/product/nossoproduto', productController.productView)
 router.get('/product/update/:id', productController.updateFormEJS)
-router.post('/product', productController.createEJS)
+router.post('/product',  productController.createEJS)
 router.put('/product/:id', productController.updateEJS)
 router.delete('/product/:id', productController.deleteEJS)
 
