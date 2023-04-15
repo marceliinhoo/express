@@ -11,7 +11,7 @@ const MainController = {
   validacao: (req, res) => {
     res.render('validacao')
   },
-  sobre: (req, res) => {
+  aboutus: (req, res) => {
     res.render('sobrenos', { })
   },
 search: (req, res) => {

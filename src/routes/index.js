@@ -20,8 +20,9 @@ const  log = require('../middlewares/log')
 router.get('/', log, mainController.validacao)
 router.get('/home',log ,mainController.index)
 router.get('/search', mainController.search)
-router.get('/sobrenos', mainController.sobre)
+router.get('/aboutus', mainController.aboutus)
 router.post('/verificar-idade', mainController.age)
+
 
 //LoginController
 router.get('/login', loginController.login)
