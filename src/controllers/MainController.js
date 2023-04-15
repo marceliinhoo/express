@@ -20,8 +20,11 @@ const MainController = {
   terms: (req, res) => {
     res.render('terms', { })
   },
-  terms: (req, res) => {
+  privacy: (req, res) => {
     res.render('privacy', { })
+  },
+  blog: (req, res) => {
+    res.render('blog', { })
   },
 search: (req, res) => {
     let search = req.query.keywords
