@@ -23,6 +23,7 @@ router.get('/search', mainController.search)
 router.get('/aboutus', mainController.aboutus)
 router.get('/contact', mainController.contact)
 router.get('/terms', mainController.terms)
+router.get('/privacy', mainController.terms)
 router.post('/verificar-idade', mainController.age)
 
 

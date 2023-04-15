@@ -20,6 +20,9 @@ const MainController = {
   terms: (req, res) => {
     res.render('terms', { })
   },
+  terms: (req, res) => {
+    res.render('privacy', { })
+  },
 search: (req, res) => {
     let search = req.query.keywords
     let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search))
