@@ -14,6 +14,9 @@ const MainController = {
   aboutus: (req, res) => {
     res.render('sobrenos', { })
   },
+  contact: (req, res) => {
+    res.render('contact', { })
+  },
 search: (req, res) => {
     let search = req.query.keywords
     let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search))

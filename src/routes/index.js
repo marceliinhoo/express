@@ -21,7 +21,9 @@ router.get('/', log, mainController.validacao)
 router.get('/home',log ,mainController.index)
 router.get('/search', mainController.search)
 router.get('/aboutus', mainController.aboutus)
+router.get('/contact', mainController.contact)
 router.post('/verificar-idade', mainController.age)
+
 
 
 //LoginController
