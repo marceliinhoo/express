@@ -15,7 +15,16 @@
 					</div>
 				</div>
 				<div class="col-12">
-					<form action="/product" method="POST">
+
+          <% if (typeof errors !== 'undefined') { %>
+            <ul>
+              <% for(let error in errors) { %>
+                <li> <%= errors[error].msg %> </li>
+              <% } %>
+            </ul>
+          <% } %>
+
+					<form action="/product" method="POST" enctype="multipart/form-data">
 						<div class="row product-detail">
 							<div class="col-12 col-md-6">
 								<label for="name" class="form-label">Nome:</label>
@@ -25,13 +34,13 @@
 								<label for="price" class="form-label">Preço:</label>
 								<input type="number" id="price" name="price" placeholder="Informe o preço do produto" class="form-input">
 							</div>
-							<div class="col-12 col-md-6">
-								<label for="discount" class="form-label">Desconto:</label>
-								<input type="number" id="discount" name="discount" placeholder="Informe o desconto do produto" class="form-input">
-							</div>
 							<div class="col-12">
 								<label for="description" class="form-label">Descrição:</label>
 								<textarea name="description" id="description" class="form-input"></textarea>
+							</div>
+							<div class="col-12 col-md-6">
+								<label for="image" class="form-label">Imagem:</label>
+								<input type="file" id="image" name="image" class="form-input">
 							</div>
 							<div class="col-12">
 								<button type="submit" class="buy-now-button">Salvar</button>

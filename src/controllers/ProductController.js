@@ -1,9 +1,9 @@
+const { validationResult } = require('express-validator')
 const products = require('../database/products.json')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
 const ProductController = {
-  
   productView: (req, res) => {
 		res.render('product', {
 			products,
@@ -62,19 +62,28 @@ const ProductController = {
 		})
 	},
   // Create form product - View
-  createFormEJS: (req, res) => {
+  createproduct: (req, res) => {
     res.render('product-create-form')
   },
-
   // Create product
   createEJS: (req, res) => {
+    let image = ''
+    const errors = validationResult(req)
+    if (!errors.isEmpty())
+        res.render('product-create-form', { errors: errors.mapped() }) // ou array()
+
+    if (req.files[0] !== undefined) {
+        image = req.files[0].filename
+    } else {
+        image = 'default-image.png'
+    }
     let newProduct = {
 			id: Number(products[products.length - 1].id) + 1,
 			...req.body,
-      image: 'default-image.png'
+      image: image
 		}
     products.push(newProduct)
-    res.redirect('/')
+    res.redirect('/home')
   },
   // Update form product - View
   updateFormEJS: (req, res) => {
@@ -85,15 +94,22 @@ const ProductController = {
   // Update product
   updateEJS: (req, res) => {
     const { id } = req.params
+    let image = ''
     
     const productIndex = products.findIndex(product => String(product.id) === id) // índice
     let productToEdit = products.find(product => product.id == id) // objeto
     
     if (productIndex != -1) {
+        if (req.files[0] !== undefined) {
+            image = req.files[0].filename
+        } else {
+            image = productToEdit.image
+        }
+
         productToEdit = {
           id: productToEdit.id,
           ...req.body,
-          image: productToEdit.image
+          image: image
         }
 
         products[productIndex] = productToEdit // atualiza
@@ -113,11 +129,6 @@ const ProductController = {
         res.redirect('/')
     }
     else return res.status(400).json({ error: 'Produto não encontrado.' })
-  },
-  slice: (req,res) => {
-    const produtosDestaque = products.slice(0, 3);
-     res.render('index', { products: produtosDestaque });
-   },
+  }
 }
-
 module.exports = ProductController

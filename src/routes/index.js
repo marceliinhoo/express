@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const { body } = require('express-validator')
 
 const mainController = require('../controllers/MainController')
 const productController = require('../controllers/ProductController')
@@ -11,9 +12,10 @@ const userController = require('../controllers/UserController')
 
 //Multer
 const upload = require('../middlewares/upload')
-
 //log
 const  log = require('../middlewares/log')
+//auth
+const auth = require('../middlewares/auth')
 
 
 //MainController
@@ -49,16 +51,30 @@ router.get('/user', userController.createFormEJS)
 // POST - EJS Create
 router.post('/user',  userController.createEJS)
 
-//ProductController
-router.get('/product/detail/:id', productController.detailEJS)
-router.get('/product/create',upload.any(), productController.createFormEJS)
+// # Product
 router.get('/product/nossoproduto', productController.productView)
-router.get('/product/update/:id', productController.updateFormEJS)
-router.post('/product',  productController.createEJS)
-router.put('/product/:id', productController.updateEJS)
-router.delete('/product/:id', productController.deleteEJS)
-
-
+// GET - EJS Detail - View
+router.get('/product/detail/:id', productController.detailEJS)
+// GET - EJS Create Form - View
+router.get('/product/create', productController.createproduct)
+// GET - EJS Update Form - View
+router.get('/product/update/:id', auth, productController.updateFormEJS)
+// POST - EJS Create
+router.post(
+  '/product',
+  upload.any(),
+  body('name')
+    .notEmpty()
+    .withMessage('Nome do Produto deve ser informado!'),
+  body('description')
+    .notEmpty()
+    .withMessage('Descrição deve ser informada!'),
+  productController.createEJS
+)
+// PUT - EJS Update
+router.put('/product/:id', auth, upload.any(), productController.updateEJS)
+// DELETE - EJS Delete
+router.delete('/product/:id', auth, productController.deleteEJS)
 
 
 module.exports = router
