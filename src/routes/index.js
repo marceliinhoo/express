@@ -28,16 +28,11 @@ router.get('/blog', mainController.blog)
 router.post('/verificar-idade', mainController.age)
 
 
-
 //LoginController
 router.get('/login', loginController.login)
 router.get('/login/minha-conta', auth, loginController.perfil)
 router.post('/login/minha-conta', loginController.loginEJS)
 
-
-
-//CarrinhoController
-router.get('/carrinho', CarrinhoController.carrinho)
 
 //FormularioController
 router.get('/cadastro', formularioController.cadastro)
@@ -45,10 +40,16 @@ router.post(
   '/cadastro',
   body('name')
     .notEmpty()
-    .withMessage('Nome do Usuário deve ser informado!'),
+    .withMessage('Nome Completo deve ser informado!'),
+    body('email')
+    .notEmpty()
+    .withMessage('Campo E-mail deve ser preenchido'),
     formularioController.createEJS
 )
 
+
+//CarrinhoController
+router.get('/carrinho', CarrinhoController.carrinho)
 
 // # Product
 router.get('/product/nossoproduto', productController.productView)
