@@ -33,8 +33,8 @@ router.post('/verificar-idade', mainController.age)
 
 //LoginController
 router.get('/login', loginController.login)
-router.get('/login/minha-conta', loginController.perfil)
-router.post('/login/minha-conta', loginController.acess)
+router.get('/login/minha-conta', auth, loginController.perfil)
+
 
 //CarrinhoController
 /* router.get('/:item', CarrinhoController.addItem) */
@@ -50,9 +50,9 @@ router.get('/product/nossoproduto', productController.productView)
 // GET - EJS Detail - View
 router.get('/product/detail/:id', productController.detailEJS)
 // GET - EJS Create Form - View
-router.get('/product/create', productController.createproduct)
+router.get('/product/create',  auth, productController.createproduct)
 // GET - EJS Update Form - View
-router.get('/product/update/:id', auth, productController.updateFormEJS)
+router.get('/product/update/:id',  productController.updateFormEJS)
 // POST - EJS Create
 router.post(
   '/product',
@@ -66,7 +66,7 @@ router.post(
   productController.createEJS
 )
 // PUT - EJS Update
-router.put('/product/:id', auth, upload.any(), productController.updateEJS)
+router.put('/product/:id', upload.any(), productController.updateEJS)
 // DELETE - EJS Delete
 router.delete('/product/:id', auth, productController.deleteEJS)
 

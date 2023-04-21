@@ -23,7 +23,7 @@ cadastro: (req, res) => {
 
     users.push(newUser)
 
-  //  console.log('users: ', users)
+//console.log('users: ', users)
 
     res.redirect('/home')
   }
