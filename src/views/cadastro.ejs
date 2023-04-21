@@ -20,7 +20,14 @@
       <div class="header">
         <h2>Seja um VIKINGS</h2>
       </div>
-      <form action="/add" id="form" class="form" method="POST" enctype="multipart/form-data">
+      <% if (typeof errors !== 'undefined') { %>
+        <ul>
+          <% for(let error in errors) { %>
+            <li> <%= errors[error].msg %> </li>
+          <% } %>
+        </ul>
+      <% } %>
+      <form action="/cadastro" id="form" class="form" method="POST" enctype="multipart/form-data">
         <div class="form-control">
           <select id="estado">
             <option>

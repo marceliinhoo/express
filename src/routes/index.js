@@ -7,7 +7,7 @@ const productController = require('../controllers/ProductController')
 const loginController = require('../controllers/LoginController')
 const CarrinhoController = require('../controllers/CarrinhoController')
 const formularioController = require ('../controllers/FormularioController')
-const userController = require('../controllers/UserController')
+
 
 
 //Multer
@@ -42,14 +42,8 @@ router.get('/carrinho', CarrinhoController.carrinho)
 
 //FormularioController
 router.get('/cadastro', formularioController.cadastro)
-router.post('/add',formularioController.envio)
+router.post('/cadastro',  formularioController.createEJS)
 
-//UserController
- 
-// GET - EJS Create Form - View
-router.get('/user', userController.createFormEJS)
-// POST - EJS Create
-router.post('/user',  userController.createEJS)
 
 // # Product
 router.get('/product/nossoproduto', productController.productView)

@@ -126,7 +126,7 @@ const ProductController = {
   
     if (productIndex != -1) {
         products.splice(productIndex, 1)
-        res.redirect('/')
+        res.redirect('/home')
     }
     else return res.status(400).json({ error: 'Produto não encontrado.' })
   }
