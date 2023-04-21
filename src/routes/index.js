@@ -7,6 +7,7 @@ const productController = require('../controllers/ProductController')
 const loginController = require('../controllers/LoginController')
 const CarrinhoController = require('../controllers/CarrinhoController')
 const formularioController = require ('../controllers/FormularioController')
+const userController = require('../controllers/UserController')
 
 
 
@@ -16,6 +17,7 @@ const upload = require('../middlewares/upload')
 const  log = require('../middlewares/log')
 //auth
 const auth = require('../middlewares/auth')
+
 
 
 //MainController
@@ -43,6 +45,18 @@ router.get('/carrinho', CarrinhoController.carrinho)
 //FormularioController
 router.get('/cadastro', formularioController.cadastro)
 router.post('/cadastro',  formularioController.createEJS)
+
+// # User
+// GET - EJS Create Form - View
+router.get('/user/create', userController.createFormEJS)
+// POST - EJS Create
+router.post(
+  '/user',
+  body('name')
+    .notEmpty()
+    .withMessage('Nome do Usuário deve ser informado!'),
+  userController.createEJS
+)
 
 
 // # Product
