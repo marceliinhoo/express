@@ -5,13 +5,13 @@ const users = require('../database/users.json')
 const formularioController = {
 
 cadastro: (req, res) => {
-    res.render('cadastro', { })
+    res.render('formulario', { })
   },
   // Create user
   createEJS: (req, res) => {
     const errors = validationResult(req)
     if (!errors.isEmpty())
-        res.render('cadastro', { errors: errors.mapped() }) // ou array()
+        res.render('Formulario', { errors: errors.mapped() }) // ou array()
 
     let newUser = {
 			id: users.length > 0 ? Number(users[users.length - 1].id) + 1 : 1,

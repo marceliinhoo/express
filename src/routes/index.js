@@ -7,9 +7,6 @@ const productController = require('../controllers/ProductController')
 const loginController = require('../controllers/LoginController')
 const CarrinhoController = require('../controllers/CarrinhoController')
 const formularioController = require ('../controllers/FormularioController')
-const userController = require('../controllers/UserController')
-
-
 
 //Multer
 const upload = require('../middlewares/upload')
@@ -17,7 +14,6 @@ const upload = require('../middlewares/upload')
 const  log = require('../middlewares/log')
 //auth
 const auth = require('../middlewares/auth')
-
 
 
 //MainController
@@ -36,38 +32,29 @@ router.post('/verificar-idade', mainController.age)
 //LoginController
 router.get('/login', loginController.login)
 router.get('/login/minha-conta', auth, loginController.perfil)
+router.post('/login/minha-conta', loginController.loginEJS)
+
 
 
 //CarrinhoController
-/* router.get('/:item', CarrinhoController.addItem) */
 router.get('/carrinho', CarrinhoController.carrinho)
 
 //FormularioController
 router.get('/cadastro', formularioController.cadastro)
-router.post('/cadastro',  formularioController.createEJS)
-
-// # User
-// GET - EJS Create Form - View
-router.get('/user/create', userController.createFormEJS)
-// POST - EJS Create
 router.post(
-  '/user',
+  '/cadastro',
   body('name')
     .notEmpty()
     .withMessage('Nome do Usuário deve ser informado!'),
-  userController.createEJS
+    formularioController.createEJS
 )
 
 
 // # Product
 router.get('/product/nossoproduto', productController.productView)
-// GET - EJS Detail - View
 router.get('/product/detail/:id', productController.detailEJS)
-// GET - EJS Create Form - View
 router.get('/product/create',  auth, productController.createproduct)
-// GET - EJS Update Form - View
 router.get('/product/update/:id',  productController.updateFormEJS)
-// POST - EJS Create
 router.post(
   '/product',
   upload.any(),
@@ -79,9 +66,7 @@ router.post(
     .withMessage('Descrição deve ser informada!'),
   productController.createEJS
 )
-// PUT - EJS Update
 router.put('/product/:id', upload.any(), productController.updateEJS)
-// DELETE - EJS Delete
 router.delete('/product/:id', auth, productController.deleteEJS)
 
 
