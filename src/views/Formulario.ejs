@@ -27,63 +27,24 @@
           <% } %>
         </ul>
       <% } %>
-      <form action="/cadastro" id="form" class="form" method="POST" enctype="multipart/form-data">
+      <form action="/formulario" method="POST">
+<!--     <div class="form-control">
+      <input type="date" id="dataNasc" name="dataNasc" placeholder="Data de Nascimento">
+       </div>  -->
         <div class="form-control">
-          <select id="estado">
-            <option>
-              São Paulo
-            </option>
-          </select>
-         <small>Mensagem de erro</small>
-       </div>
-        <div class="form-control">
-          <input
-           id="dataNasc"
-           name="dataNasc"
-           type="date"
-           placeholder="Data de Nascimento"
-         />
-         <small>Mensagem de erro</small>
-       </div>
-        <div class="form-control">
-           <input
-            id="username"
-            type="text"
-            name="name"
-            placeholder="Nome Completo"
-          />
-          <small>Mensagem de erro</small>
+          <input type="text" id="username" name="name" placeholder="Nome Completo">
         </div>
         <div class="form-control">
-           <input
-            id="email"
-            name="email"
-            type="text"
-            placeholder="Digite seu email"
-          />
-          <small>Mensagem de erro</small>
+          <input type="email" id="email" name="email" placeholder="Digite seu email">
         </div>
         <div class="form-control">
-          <input
-            id="password"
-            name="password"
-            type="password"
-            placeholder="Digite sua senha."
-          />
-          <small>Mensagem de erro</small>
+          <input type="password" id="password" name="password" placeholder="Digite sua senha">
         </div>
-
         <div class="form-control">
-           <input
-            id="password-confirmation"
-            type="password"
-            name="password-confirmation"
-            placeholder="Confirme sua senha"
-          />
-          <small>Mensagem de erro</small>
+          <input type="password" id="pwdConfirm" placeholder="Confirme sua senha">
         </div>
         <div >
-        <button class='enviar' type="submit">Enviar</button>
+          <button type="submit" class="enviar">Enviar</button>
       </div>
       </form>
     </div>

@@ -35,7 +35,7 @@ router.post('/login/minha-conta', loginController.loginEJS)
 
 
 //FormularioController
-router.get('/cadastro', formularioController.cadastro)
+router.get('/formulario', formularioController.cadastro)
 router.post(
   '/cadastro',
   body('name')

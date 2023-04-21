@@ -7,26 +7,31 @@ const formularioController = {
 cadastro: (req, res) => {
     res.render('formulario', { })
   },
-  // Create user
+
   createEJS: (req, res) => {
     const errors = validationResult(req)
     if (!errors.isEmpty())
-        res.render('Formulario', { errors: errors.mapped() }) // ou array()
+        res.render('formulario', { errors: errors.mapped() }) // ou array()
 
-    let newUser = {
-			id: users.length > 0 ? Number(users[users.length - 1].id) + 1 : 1,
-			...req.body
-		}
+    const user = users.find(user => user.email === req.body.email) // encontra o usuário através do e-mail - e retorna o objeto
 
-    const hash = bcrypt.hashSync(newUser.pwd, 10) // gera o hash da senha
-    newUser.pwd = hash // salva na propriedade senha
+    if (!user) {
+        let newUser = {
+          id: users.length > 0 ? Number(users[users.length - 1].id) + 1 : 1,
+          ...req.body
+        }
+        // delete newUser.pwdConfirm // remove propriedade pwdConfirm - porque não é necessário gravar no banco
 
-    users.push(newUser)
+        const hash = bcrypt.hashSync(newUser.pwd, 10) // gera o hash da senha
+        newUser.pwd = hash // salva na propriedade senha
 
-//console.log('users: ', users)
+        users.push(newUser)
+ 
 
-    res.redirect('/home')
-  }
+        res.redirect('/home')
+    } else res.render('formulario', { errors: [{ msg: "Usuário já cadastrado!" }] })
+  },
 }
+/* console.log('users', users) */
 
 module.exports = formularioController 
