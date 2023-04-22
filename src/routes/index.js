@@ -15,7 +15,6 @@ const  log = require('../middlewares/log')
 //auth
 const auth = require('../middlewares/auth')
 
-
 //MainController
 router.get('/', log, mainController.validacao)
 router.get('/home',log ,mainController.index)
@@ -27,12 +26,10 @@ router.get('/privacy', mainController.privacy)
 router.get('/blog', mainController.blog)
 router.post('/verificar-idade', mainController.age)
 
-
 //LoginController
 router.get('/login', loginController.login)
 router.get('/login/minha-conta', auth, loginController.perfil)
 router.post('/login/minha-conta', loginController.loginEJS)
-
 
 //FormularioController
 router.get('/formulario', formularioController.cadastro)
@@ -46,8 +43,6 @@ router.post(
     .withMessage('Campo E-mail deve ser preenchido'),
     formularioController.createEJS
 )
-
-
 //CarrinhoController
 router.get('/carrinho', CarrinhoController.carrinho)
 
@@ -69,6 +64,5 @@ router.post(
 )
 router.put('/product/:id', upload.any(), productController.updateEJS)
 router.delete('/product/:id', auth, productController.deleteEJS)
-
 
 module.exports = router

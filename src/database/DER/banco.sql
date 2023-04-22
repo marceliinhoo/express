@@ -58,7 +58,6 @@ CREATE TABLE IF NOT EXISTS `vikingsBeer`.`PerfilCompleto` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `vikingsBeer`.`Product`
 -- -----------------------------------------------------
@@ -72,7 +71,6 @@ CREATE TABLE IF NOT EXISTS `vikingsBeer`.`Product` (
   `image` VARCHAR(500) NULL,
   PRIMARY KEY (`idProduct`))
 ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `vikingsBeer`.`Pedido_Item`
@@ -91,7 +89,6 @@ CREATE TABLE IF NOT EXISTS `vikingsBeer`.`Pedido_Item` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `vikingsBeer`.`Carrinho`
@@ -119,7 +116,6 @@ CREATE TABLE IF NOT EXISTS `vikingsBeer`.`Carrinho` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
