@@ -13,7 +13,7 @@ const LoginController = {
   loginEJS: (req, res) => {
     const user = users.find(user => user.email === req.body.email) // encontra o usuário através do e-mail - e retorna o objeto
 
-    if (user && bcrypt.compareSync(req.body.pwd, user.pwd)) { // compara a senha recebida no body com a senha gravada no banco de dados
+    if (user && bcrypt.compareSync(req.body.password, user.password)) { // compara a senha recebida no body com a senha gravada no banco de dados
         const token = jwt.sign({ id: user.id, email: user.email }, 'segredo') // gera o token do usuário com JWT
         res.cookie('token', token, { maxAge: 2592000000 }) // expira em 30 dias
 

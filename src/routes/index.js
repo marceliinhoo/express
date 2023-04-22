@@ -34,7 +34,7 @@ router.post('/login/minha-conta', loginController.loginEJS)
 //FormularioController
 router.get('/formulario', formularioController.cadastro)
 router.post(
-  '/cadastro',
+  '/formulario',
   body('name')
     .notEmpty()
     .withMessage('Nome Completo deve ser informado!'),

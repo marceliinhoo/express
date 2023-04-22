@@ -20,10 +20,14 @@ cadastro: (req, res) => {
         const hash = bcrypt.hashSync(newUser.password, 10) // gera o hash da senha
         newUser.password = hash // salva na propriedade senha
         users.push(newUser)
+
+        console.log('users', users)
+        
         res.redirect('/home')
+
     } else res.render('formulario', { errors: [{ msg: "Usuário já cadastrado!" }] })
   },
 }
-/* console.log('users', users) */
+
 
 module.exports = formularioController 
