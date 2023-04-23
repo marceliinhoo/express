@@ -29,7 +29,7 @@ router.post('/verificar-idade', mainController.age)
 //LoginController
 router.get('/login', loginController.login)
 router.get('/login/minha-conta', auth, loginController.perfil)
-router.post('/login/minha-conta', loginController.loginEJS)
+router.post('/login', loginController.loginEJS)
 
 //FormularioController
 router.get('/formulario', formularioController.cadastro)
