@@ -57,7 +57,7 @@
 .top{
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
 }
 
 .flip-card-back a{
