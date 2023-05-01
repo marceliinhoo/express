@@ -1,4 +1,5 @@
-const { Product } = require('../models')
+/* const { Product } = require('../models/product') */
+const products = require('../database/products.json')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
 const MainController = {
