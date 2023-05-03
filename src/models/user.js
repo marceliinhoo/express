@@ -13,7 +13,7 @@ module.exports = (sequelize, DataType) => {
         senha: DataType.STRING(30),
     }, {
         timestamps: false,
-        tableName: 'usuario'
+        tableName: 'user'
     }) ​
     User.hasOne('PerfilCompleto', {
         foreignKey:"id_usuario"
