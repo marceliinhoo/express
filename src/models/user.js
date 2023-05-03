@@ -15,5 +15,8 @@ module.exports = (sequelize, DataType) => {
         timestamps: false,
         tableName: 'usuario'
     }) ​
+    User.hasOne('PerfilCompleto', {
+        foreignKey:"id_usuario"
+    })
     return User
 }
