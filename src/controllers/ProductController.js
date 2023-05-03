@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator')
 const products = require('../database/products.json')
+/* const { product } = require('../models') */
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 

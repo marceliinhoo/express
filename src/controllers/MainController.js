@@ -1,19 +1,46 @@
-/* const { Product } = require('../models/product') */
+/* const { Op } = require('sequelize')
+const { Product } = require('../models') */
 const products = require('../database/products.json')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
 const MainController = {
-  index: async (req, res) => {
-    try {
-      const products = await Product.findAll()
+    index: async (req, res) => {
+      try {
+        const products = await Product.findAll()
+  
+        res.render('index', {
+          products,
+          toThousand
+        })
+      } catch (error) {
+        res.status(400).json({ error })
+      }
+  },
+search: async (req, res) => {
+  let search = req.query.keywords
 
-      res.render('index', {
-        products,
-        toThousand
-      })
-    } catch (error) {
-      res.status(400).json({ error })
-    }
+  try {
+    const productsToSearch = await Product.findAll({
+      where: {
+        name: {
+          [Op.substring]: search
+        }
+      }
+    })
+
+    res.render('results', {
+      products: productsToSearch,
+      search,
+      toThousand,
+    })
+  } catch (error) {
+    res.status(400).json({ error })
+  }
+  }, 
+  age: (req, res) => {
+    if (req.body.age === 'Sim') {
+        res.render('index')
+    } else res.send('Você não pode acessar o site')
   },
   validacao: (req, res) => {
     res.render('validacao')
@@ -32,20 +59,6 @@ const MainController = {
   },
   blog: (req, res) => {
     res.render('blog', { })
-  },
-search: (req, res) => {
-    let search = req.query.keywords
-    let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search))
-    res.render('results', {
-      products: productsToSearch,
-      search,
-      toThousand,
-    })
-  }, 
-  age: (req, res) => {
-    if (req.body.age === 'Sim') {
-        res.render('index')
-    } else res.send('Você não pode acessar o site')
   },
 }
 module.exports = MainController
