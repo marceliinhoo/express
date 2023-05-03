@@ -40,17 +40,17 @@ DROP TABLE IF EXISTS `vikingsBeer`.`perfil_completo` ;
 
 CREATE TABLE IF NOT EXISTS `vikingsBeer`.`perfil_completo` (
   `id` INT NOT NULL,
-  `id_usuario` INT NULL,
-  `telefone` VARCHAR(45) NULL,
-  `Cpf` VARCHAR(45) NULL,
-  `cep` DECIMAL(9) NULL,
-  `endereco` VARCHAR(500) NULL,
-  `numero` DECIMAL(100) NULL,
-  `complemento` VARCHAR(500) NULL,
+  `id_usuario` INT NOT NULL,
+  `telefone` VARCHAR(30) NULL,
+  `Cpf` VARCHAR(15) NULL,
+  `cep` VARCHAR(10) NULL,
+  `endereco` VARCHAR(200) NULL,
+  `numero` INT NULL,
+  `complemento` VARCHAR(100) NULL,
   `cidade` VARCHAR(100) NULL,
-  `foto_perfil` VARCHAR(100) NULL,
+  `foto_perfil` VARCHAR(500) NULL,
   PRIMARY KEY (`id`, `id_usuario`),
-  INDEX `idUsuario_idx` (`id_usuario` ASC) VISIBLE,
+  INDEX `idUsuario_idx` (`id_usuario` ASC),
   CONSTRAINT `id_usuario`
     FOREIGN KEY (`id_usuario`)
     REFERENCES `vikingsBeer`.`usuario` (`id`)
@@ -71,7 +71,6 @@ CREATE TABLE IF NOT EXISTS `vikingsBeer`.`carrinho` (
   `total_preco` DECIMAL(10,2) NULL,
   `entrega` DATE NULL,
   PRIMARY KEY (`id`),
-  INDEX `idUsuario_idx` (`id_perfil` ASC) VISIBLE,
   CONSTRAINT `id_perfil`
     FOREIGN KEY (`id_perfil`)
     REFERENCES `vikingsBeer`.`perfil_completo` (`id_usuario`)
@@ -105,7 +104,6 @@ CREATE TABLE IF NOT EXISTS `vikingsBeer`.`produto` (
   `imagem` VARCHAR(500) NULL,
   `idtype_beer` INT NULL,
   PRIMARY KEY (`id`),
-  INDEX `Idtype_beer_idx` (`idtype_beer` ASC) VISIBLE,
   CONSTRAINT `Id_type_beer`
     FOREIGN KEY (`idtype_beer`)
     REFERENCES `vikingsBeer`.`type_beer` (`idtype_beer`)
@@ -123,8 +121,6 @@ CREATE TABLE IF NOT EXISTS `vikingsBeer`.`pedido_item` (
   `id_carrinho` INT NOT NULL,
   `id_produto` INT NOT NULL,
   `quant` VARCHAR(45) NULL,
-  INDEX `idProduct_idx` (`id_produto` ASC) VISIBLE,
-  INDEX `id_carrinho_idx` (`id_carrinho` ASC) VISIBLE,
   PRIMARY KEY (`id_carrinho`, `id_produto`),
   CONSTRAINT `id_produto`
     FOREIGN KEY (`id_produto`)
