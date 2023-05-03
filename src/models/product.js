@@ -9,11 +9,11 @@ module.exports = (sequelize, DataType) => {
         autoIncrement: true
   
       },
-      name: DataType.STRING(100),
-      description: DataType.STRING(1000),
-      price: DataType.DECIMAL(10, 2),
-      image: DataType.STRING(500),
-      id_type: DataType.INTEGER
+      nome: DataType.STRING(100),
+      descricao: DataType.STRING(1000),
+      preco: DataType.DECIMAL(10, 2),
+      imagem: DataType.STRING(500),
+      idtype_beer: DataType.INTEGER
     }, {
       timestamps: false,
       tableName: 'product'
