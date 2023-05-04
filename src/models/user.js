@@ -1,5 +1,3 @@
-
-
 module.exports = (sequelize, DataType) => {
     const User = sequelize.define('User', {  
         id: {
@@ -7,16 +5,16 @@ module.exports = (sequelize, DataType) => {
             primaryKey: true,
             autoIncrement: true
         },
-        nome: DataType.STRING(250),
         dt_nasc: DataType.DATE,
+        name: DataType.STRING(250),
         email: DataType.STRING(250),
-        senha: DataType.STRING(30),
+        password: DataType.STRING(30),
     }, {
         timestamps: false,
         tableName: 'user'
-    }) ​
-    User.hasOne('PerfilCompleto', {
-        foreignKey:"id_usuario"
-    })
+    },
+   /*  User.hasOne('Account', {
+        foreignKey:"id_user"
+    }) */)
     return User
 }

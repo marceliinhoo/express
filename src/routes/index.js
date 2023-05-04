@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { body } = require('express-validator')
+const moment = require('moment');
 
 const mainController = require('../controllers/MainController')
 const productController = require('../controllers/ProductController')
@@ -35,10 +36,21 @@ router.post('/login', loginController.loginEJS)
 router.get('/formulario', formularioController.cadastro)
 router.post(
   '/formulario',
+  body('dataNasc')
+  .notEmpty()
+  .withMessage('Necessário preencher a data de nascimento')
+  .custom((value) => {
+    const idade = moment().diff(moment(value, 'YYYY-MM-DD'), 'years');
+    if (idade >= 18) {
+      return true;
+    } else {
+      throw new Error('Você é menor de idade');
+    }
+  }),
   body('name')
     .notEmpty()
     .withMessage('Nome Completo deve ser informado!'),
-    body('email')
+  body('email')
     .notEmpty()
     .withMessage('Campo E-mail deve ser preenchido'),
     formularioController.createEJS

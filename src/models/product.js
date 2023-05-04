@@ -1,4 +1,3 @@
-
 module.exports = (sequelize, DataType) => {
 
   const Product = sequelize.define('Product', {  
@@ -16,11 +15,8 @@ module.exports = (sequelize, DataType) => {
   }, {
     timestamps: false,
     tableName: 'product'
-
-  }) ​
+  })
   return Product
 }
-
-
 
   
