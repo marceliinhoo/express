@@ -1,33 +1,40 @@
 const { validationResult } = require('express-validator')
 const bcrypt = require('bcrypt')
-const users = require('../database/users.json')
+const { User } = require('../models')
+
 const formularioController = {
 
 cadastro: (req, res) => {
     res.render('formulario', { })
   },
-  createEJS: (req, res) => {
+  createEJS: async (req, res) => {
     const errors = validationResult(req)
     if (!errors.isEmpty())
-        res.render('formulario', { errors: errors.mapped() }) // ou array()
-    const user = users.find(user => user.email === req.body.email) // encontra o usuário através do e-mail - e retorna o objeto
-    if (!user) {
-        let newUser = {
-          id: users.length > 0 ? Number(users[users.length - 1].id) + 1 : 1,
-          ...req.body
+        res.render('formulario', { errors: errors.mapped() }) 
+
+    try {
+      const user = await User.findOne({
+        where: {
+          email: req.body.email
         }
-        // delete newUser.pwdConfirm // remove propriedade pwdConfirm - porque não é necessário gravar no banco
-        const hash = bcrypt.hashSync(newUser.password, 10) // gera o hash da senha
-        newUser.password = hash // salva na propriedade senha
-        users.push(newUser)
+      })
 
-        console.log('users', users)
-        
-        res.redirect('/home')
+      if (!user) {
+          let newUser = {
+            ...req.body
+          }
 
-    } else res.render('formulario', { errors: [{ msg: "Usuário já cadastrado!" }] })
-  },
+
+          const hash = bcrypt.hashSync(newUser.password, 10) 
+          newUser.password = hash 
+
+          await User.create(newUser) 
+
+          res.redirect('/home')
+      } else res.render('formulario', { errors: [{ msg: "Usuário já cadastrado!" }] })
+    } catch (error) {
+      res.status(400).json({ error })
+    }
+  }
 }
-
-
-module.exports = formularioController 
+module.exports = formularioController

@@ -8,7 +8,7 @@ module.exports = (sequelize, DataType) => {
         dt_nasc: DataType.DATE,
         name: DataType.STRING(250),
         email: DataType.STRING(250),
-        password: DataType.STRING(30),
+        password: DataType.STRING(100),
     }, {
         timestamps: false,
         tableName: 'user'

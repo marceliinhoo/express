@@ -8,8 +8,8 @@ module.exports = (sequelize, DataType) => {
 
     },
     name: DataType.STRING(100),
-    description: DataType.STRING(1000),
     price: DataType.DECIMAL(10, 2),
+    description: DataType.STRING(1000),
     image: DataType.STRING(500),
     id_type: DataType.INTEGER
   }, {
