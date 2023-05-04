@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "",
-    "database": "Banco",
+    "database": "VikingsBeer",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
