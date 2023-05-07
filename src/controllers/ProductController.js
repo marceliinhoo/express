@@ -58,15 +58,12 @@ const ProductController = {
     else return res.status(400).json({ error: 'Produto não encontrado.' })
   },
 
-  /**
-   * EJS
-   */
-  // Detail from one product
 	detailEJS: async (req, res) => {
 		let id = req.params.id
 		try { 
       const product = await Product.findByPk(id)
 		res.render('detail', {
+      valor: 1,
 			product,
 			toThousand
 		})
@@ -74,11 +71,19 @@ const ProductController = {
     res.status(400).json({ error })
   }
 },
-  // Create form product - View
+detailQuant:(req, res) => {
+  const valorAtual = parseInt(req.body.valor);
+  if (req.body.botao === 'mais') {
+    valorAtual++;
+  } else if (req.body.botao === 'menos') {
+    valorAtual--;
+  }
+  res.render('detail', { valor: valorAtual });
+},
   createproduct: (req, res) => {
     res.render('product-create-form')
   },
-  // Create product
+
   createEJS: async (req, res) => {
     let image = ''
 
@@ -94,7 +99,7 @@ const ProductController = {
       }
       
       let newProduct = {
-        id: Number(product[product.length - 1].id) + 1,
+
         ...req.body,
         image: image
       }
@@ -107,37 +112,52 @@ const ProductController = {
     }
   },
   // Update form product - View
-  updateFormEJS: (req, res) => {
-    let id = req.params.id
-		let productToEdit = products.find(product => product.id == id)
-		res.render('product-edit-form', { productToEdit })
+  updateFormEJS: async (req, res) => {
+    const id = req.params.id
+
+    try {
+      const productToEdit = await Product.findByPk(id)
+
+      res.render('edit-form', { productToEdit })
+    } catch (error) {
+      res.status(400).json({ error })
+    }
   },
   // Update product
-  updateEJS: (req, res) => {
+  updateEJS: async (req, res) => {
     const { id } = req.params
     let image = ''
     
-    const productIndex = products.findIndex(product => String(product.id) === id) // índice
-    let productToEdit = products.find(product => product.id == id) // objeto
+    try {
+      const productToEdit = await Product.findByPk(id)
     
-    if (productIndex != -1) {
-        if (req.files[0] !== undefined) {
-            image = req.files[0].filename
-        } else {
-            image = productToEdit.image
-        }
+      if (productToEdit != undefined) {
+          if (req.files[0] !== undefined) {
+              image = req.files[0].filename
+          } else {
+              image = productToEdit.image
+          }
 
-        productToEdit = {
-          id: productToEdit.id,
-          ...req.body,
-          image: image
-        }
+          let product = {
+            ...req.body,
+            image: image
+          }
 
-        products[productIndex] = productToEdit // atualiza
+          await Product.update(
+            product,
+            {
+              where: {
+                id: id
+              }
+            }
+          ) // atualiza o registro no banco de dados
 
-        res.redirect('/product/nossoproduto')
+          res.redirect('/product/nossoproduto')
+      } else return res.status(400).json({ error: 'Produto não encontrado.' })
+
+    } catch (error) {
+      res.status(400).json({ error })
     }
-    else return res.status(400).json({ error: 'Produto não encontrado.' })
   },
   // Delete product
   deleteEJS: async (req, res) => {
