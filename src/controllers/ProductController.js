@@ -72,10 +72,11 @@ const ProductController = {
   }
 },
 detailQuant:(req, res) => {
-  const valorAtual = parseInt(req.body.valor);
-  if (req.body.botao === 'mais') {
+  const botao = req.body.botao;
+  let valorAtual = parseInt(req.body.valor);
+  if (botao === 'mais') {
     valorAtual++;
-  } else if (req.body.botao === 'menos') {
+  } else if (botao === 'menos') {
     valorAtual--;
   }
   res.render('detail', { valor: valorAtual });
