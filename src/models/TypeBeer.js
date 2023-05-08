@@ -8,9 +8,13 @@ module.exports = (sequelize, DataType) => {
   
       },
       name: DataType.STRING(100),
+
     }, {
       timestamps: false,
       tableName: 'type_beer'
-    })
+    });
+    TypeBeer.associate = (models) => {
+      TypeBeer.hasMany(models.Product, { foreignKey: 'id_type', as: 'product' })
+    };
     return TypeBeer
   }

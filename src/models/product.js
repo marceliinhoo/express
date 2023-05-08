@@ -15,7 +15,11 @@ module.exports = (sequelize, DataType) => {
   }, {
     timestamps: false,
     tableName: 'product'
-  })
+  });
+  Product.associate = (models) => {
+    Product.belongsTo(models.TypeBeer, { foreignKey: 'id_type', as: 'type' })
+    Product.belongsToMany(models.ShoppingCart, { foreignKey: 'id_cart', as: 'order', through: models.OrderItem})
+  };
   return Product
 }
 

@@ -17,9 +17,11 @@ module.exports = (sequelize, DataType) => {
     }, {
         timestamps: false,
         tableName: 'account'
-    },
-/*     Account.belongsTo('User', {
-        foreignKey:"id_user"
-    }) */)
+    });
+    Account.associate = (models) => {
+        Account.belongsTo(models.User, { foreignKey: 'id_user', as: 'user' })
+        Account.hasMany(models.ShoppingCart, { foreignKey: 'id_account', as: 'ShoppingCart'})
+      };
+
     return Account
 }

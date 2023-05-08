@@ -13,7 +13,10 @@ module.exports = (sequelize, DataType) => {
     }, {
       timestamps: false,
       tableName: 'ordr_item'
-    })
+    });
+    OrderItem.associate = (models) => {
+      OrderItem.belongsTo(models.User, { foreignKey: 'id_user', as: 'user' });
+    };
     return OrderItem
   }
   

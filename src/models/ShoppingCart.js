@@ -14,6 +14,10 @@ module.exports = (sequelize, DataType) => {
     }, {
       timestamps: false,
       tableName: 'shopping_cart'
-    })
+    });
+    ShoppingCart.associate = (models) => {
+      ShoppingCart.belongsTo(models.Account, { foreignKey: 'id_account', as: 'account' })
+      ShoppingCart.belongsToMany(models.Product, { foreignKey: 'id_product', as: 'orderItem', through: models.OrderItem})
+    };
     return ShoppingCart
   }

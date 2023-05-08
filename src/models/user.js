@@ -12,9 +12,10 @@ module.exports = (sequelize, DataType) => {
     }, {
         timestamps: false,
         tableName: 'user'
-    },
-   /*  User.hasOne('Account', {
-        foreignKey:"id_user"
-    }) */)
+    });
+    User.associate = (models) => {
+        User.hasOne(models.Account, { foreignKey: 'id_user', as: 'user' })
+      };
+
     return User
 }
