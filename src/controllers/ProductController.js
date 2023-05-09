@@ -71,7 +71,7 @@ const ProductController = {
           require: true
         }
       })
-      
+
 		res.render('detail', {
 			product,
 			toThousand
@@ -112,8 +112,10 @@ detailQuant:(req, res) => {
       let newProduct = {
 
         ...req.body,
-        image: image
+        image: image,
+    
       }
+      console.log(req.body)
 
       await Product.create(newProduct) // cria o registro no banco de dados
 
