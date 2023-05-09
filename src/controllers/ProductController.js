@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator')
 /* const products = require('../database/products.json') */
-const { Product } = require('../models')
+const { Product, TypeBeer } = require('../models')
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
@@ -61,9 +61,18 @@ const ProductController = {
 	detailEJS: async (req, res) => {
 		let id = req.params.id
 		try { 
-      const product = await Product.findByPk(id)
+      const product = await Product.findOne({
+        where: {
+          id: id
+        },
+        include: {
+          model: TypeBeer,
+          as: 'typeBeer',
+          require: true
+        }
+      })
+      
 		res.render('detail', {
-      valor: 1,
 			product,
 			toThousand
 		})
@@ -71,6 +80,7 @@ const ProductController = {
     res.status(400).json({ error })
   }
 },
+
 detailQuant:(req, res) => {
   const botao = req.body.botao;
   let valorAtual = parseInt(req.body.valor);
