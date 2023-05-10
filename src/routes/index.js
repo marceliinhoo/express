@@ -63,7 +63,7 @@ router.get('/product/nossoproduto', productController.productView)
 router.get('/product/detail/:id', productController.detailEJS)
 router.post('/product/detail/:id', productController.detailQuant)
 router.get('/product/create',  auth, productController.createproduct)
-router.get('/product/update/:id',  productController.updateFormEJS)
+router.get('/product/update/:id', auth, productController.updateFormEJS)
 router.post(
   '/product',
   upload.any(),
@@ -75,7 +75,7 @@ router.post(
     .withMessage('Descrição deve ser informada!'),
   productController.createEJS
 )
-router.put('/product/:id', upload.any(), auth, productController.updateEJS)
+router.put('/product/:id',   upload.any(), productController.updateEJS)
 router.delete('/product/:id', auth, productController.deleteEJS)
 
 
