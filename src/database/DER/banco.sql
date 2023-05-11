@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `vikingsBeer`.`user` (
   `dt_nasc` DATE NULL,
   `name` VARCHAR(250) NULL,
   `email` VARCHAR(250) NULL,
-  `password` VARCHAR(30) NULL,
+  `password` VARCHAR(100) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
