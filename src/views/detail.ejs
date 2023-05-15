@@ -34,15 +34,13 @@
                 </p>
                 <ul class="actions-list">
                   <div class="col-md-5" id="quantidade">
-                    <form action="/product/detail/:id" method="POST" style="display: inline-flex">
-                      <button type="button" id="minus" name="botao" value="menos">-</button>
-                    <input [(ngModel)]="quant" id="quant" name="quant" class="text" size="1" value="1" type="text"
-                      maxlength="2" />
-                    <button type="button" id="plus" name="botao" value="mais">+</button>
-                    </form>
+                    <input type="button" id="minus" value="-" (click)="process(-1)" (click)="parcial()" />
+                <input [(ngModel)]="quant" id="quant" name="quant" class="text" size="1" value="1" type="text"
+                  maxlength="2" />
+                <input type="button" id="plus" value="+" (click)="process(1)" (click)="parcial()">
                   </div>
-                  <button type="button" class="btn bb" (click)="addCarrinho()" routerLink="/"><p>Comprar</p></button>
-                  <form action="/product/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                  <a href="/carrinho" type="button" class="btn bb" (click)="addCarrinho()" routerLink="/"><p>Comprar</p></a>
+                   <form action="/product/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
                     <button type="submit" class="action-button delete">Excluir Produto</button>
                   </form>
                   <a href="/product/update/<%= product.id %>" class="action-button edit">Editar Produto</a>

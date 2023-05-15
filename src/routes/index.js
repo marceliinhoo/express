@@ -36,7 +36,7 @@ router.post('/login', loginController.loginEJS)
 router.get('/formulario', formularioController.cadastro)
 router.post(
   '/formulario',
-  body('dataNasc')
+  body('dt_nasc')
   .notEmpty()
   .withMessage('Necessário preencher a data de nascimento')
   .custom((value) => {
@@ -61,7 +61,6 @@ router.get('/carrinho', CarrinhoController.carrinho)
 // # Product
 router.get('/product/nossoproduto', productController.productView)
 router.get('/product/detail/:id', productController.detailEJS)
-router.post('/product/detail/:id', productController.detailQuant)
 router.get('/product/create',  auth, productController.createproduct)
 router.get('/product/update/:id', auth, productController.updateFormEJS)
 router.post(

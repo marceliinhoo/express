@@ -1,6 +1,9 @@
 const { validationResult } = require('express-validator')
 /* const products = require('../database/products.json') */
 const { Product, TypeBeer } = require('../models')
+/* const menos = document.getElementById("minus");
+const mais = document.getElementById("plus");
+const quantidadeInput = document.getElementById("quant"); */
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
 
@@ -79,17 +82,6 @@ const ProductController = {
 	} catch (error){
     res.status(400).json({ error })
   }
-},
-
-detailQuant:(req, res) => {
-  const botao = req.body.botao;
-  let valorAtual = parseInt(req.body.valor);
-  if (botao === 'mais') {
-    valorAtual++;
-  } else if (botao === 'menos') {
-    valorAtual--;
-  }
-  res.render('detail', { valor: valorAtual });
 },
   createproduct: (req, res) => {
     res.render('product-create-form')
@@ -187,6 +179,34 @@ detailQuant:(req, res) => {
     } catch (error) {
       res.status(400).json({ error })
     }
+  },
+  addToCart: async (req,res) => {
+    const productId = req.body.productId;
+    const productQuantity = parseInt(req.body.productQuantity);
+      
+    if (!req.session.cart[productId]) {
+          req.session.cart[productId] = 0;
+        }
+      
+    req.session.cart[productId] += productQuantity;
+      
+    res.redirect('/carrinho');
   }
+
 }
+
+/* menos.addEventListener("click", () => {
+  let quantidade = parseInt(quantidadeInput.value);
+  if (quantidade > 1) {
+    quantidade--;
+  }
+  quantidadeInput.value = quantidade;
+});
+
+mais.addEventListener("click", () => {
+  let quantidade = parseInt(quantidadeInput.value);
+  quantidade++;
+  quantidadeInput.value = quantidade;
+}); */
+
 module.exports = ProductController
